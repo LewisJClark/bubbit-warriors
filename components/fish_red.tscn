@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8222r13n87gl"]
+
+[ext_resource type="PackedScene" uid="uid://odt12l06fe1h" path="res://components/fish.tscn" id="1_57noe"]
+[ext_resource type="Material" uid="uid://cchw5i504ify" path="res://models/materials/fishSkin_red.tres" id="2_fvhwn"]
+
+[node name="Fish" instance=ExtResource("1_57noe")]
+
+[node name="fish_lp" parent="fish" index="0"]
+material_override = ExtResource("2_fvhwn")
+
+[editable path="fish"]
