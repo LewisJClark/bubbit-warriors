@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://katggflykr6o"]
+[gd_scene load_steps=5 format=3 uid="uid://katggflykr6o"]
 
-[ext_resource type="Script" path="res://Main/WarriorSpawner.cs" id="1_qe7ss"]
 [ext_resource type="Texture2D" uid="uid://c81js0v4lyhlu" path="res://Resources/Initial_Background.png" id="1_r4787"]
+
+[ext_resource type="PackedScene" uid="uid://cm1vv07dkleyc" path="res://Base/Base.tscn" id="3_pc27v"]
+[ext_resource type="Script" path="res://Base/Base.cs" id="4_l8ecs"]
+
+[ext_resource type="PackedScene" uid="uid://cgxdnojlrs4hh" path="res://components/warrior_spawner.tscn" id="2_3t1tw"]
 
 [node name="Main" type="Node3D"]
 
@@ -12,8 +16,21 @@ texture_filter = 0
 texture = ExtResource("1_r4787")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -9.53674e-07, 9.74736, 15.2936)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 17.41, 15.294)
 
 [node name="WarriorSpawner" type="Node3D" parent="."]
 transform = Transform3D(54.0867, 0, 0, 0, 9.61423e-07, 1, 0, 21.9948, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_qe7ss")
+
+[node name="EnemyBase" parent="." instance=ExtResource("3_pc27v")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 236.357, 0, 0)
+script = ExtResource("4_l8ecs")
+Team = 0
+
+[node name="FriendlyBase" parent="." instance=ExtResource("3_pc27v")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -234.894, 0, 0)
+script = ExtResource("4_l8ecs")
+Team = 0
+
+[node name="WarriorSpawner" parent="." node_paths=PackedStringArray("ground") instance=ExtResource("2_3t1tw")]
+ground = NodePath("../Ground")
