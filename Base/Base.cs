@@ -58,10 +58,12 @@ public partial class Base : Node3D
     public override void _Process(double delta)
     {
         base._Process(delta);
-		float newZ = _spawnPoint.Position.Z;
-		newZ += Input.GetAxis("MoveSpawnerUp", "MoveSpawnerDown") * 3f * (float)delta;
-		newZ = Math.Clamp(newZ, -2.4f, 2.4f);
-		_spawnPoint.Position = new Vector3(_spawnPoint.Position.X, _spawnPoint.Position.Y, newZ);
+		if (Team == Team.Friendly) {
+			float newZ = _spawnPoint.Position.Z;
+			newZ += Input.GetAxis("MoveSpawnerUp", "MoveSpawnerDown") * 3f * (float)delta;
+			newZ = Math.Clamp(newZ, -2.4f, 2.4f);
+			_spawnPoint.Position = new Vector3(_spawnPoint.Position.X, _spawnPoint.Position.Y, newZ);
+		}
     }
 
     public void Attack(int damage)
