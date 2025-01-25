@@ -15,7 +15,10 @@ public partial class Unit : Node3D
 	protected uint health;
 	public uint maxHealth;
 
-	public Unit Target = null;
+	[Signal]
+    public delegate void HealthDepletedEventHandler();
+
+	// public Unit Target = null;
 
 	protected Node3D _model;
 	protected Area3D _hitbox;
@@ -41,6 +44,7 @@ public partial class Unit : Node3D
 		if (health <= power) {
 			GD.Print("Unit Killed");
 			this.QueueFree();
+			EmitSignal(SignalName.HealthDepleted);
 			return true;
 		}
 		else {

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Base/Base.cs" id="1_67uot"]
 [ext_resource type="PackedScene" uid="uid://cg81uw7av2wy3" path="res://Units/Warrior/Warrior.tscn" id="2_i8561"]
 [ext_resource type="PackedScene" uid="uid://ikl81da8dfhv" path="res://models/base.gltf" id="2_j22jt"]
-[ext_resource type="PackedScene" uid="uid://dfkw52x3df6sp" path="res://components/base_red.tscn" id="4_oobyy"]
+[ext_resource type="PackedScene" path="res://components/base_red.tscn" id="4_oobyy"]
 
 [node name="Base" type="Node3D"]
 script = ExtResource("1_67uot")
