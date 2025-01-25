@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cx3wyn7yy41gw"]
+[gd_scene load_steps=9 format=3 uid="uid://cx3wyn7yy41gw"]
 
 [ext_resource type="PackedScene" uid="uid://ckk3f8of0y3lf" path="res://components/base.tscn" id="1_dqtks"]
 [ext_resource type="PackedScene" uid="uid://odt12l06fe1h" path="res://components/fish.tscn" id="2_1wet0"]
-[ext_resource type="PackedScene" uid="uid://dpo7s1yklhinu" path="res://components/base_red.tscn" id="3_0kccs"]
+[ext_resource type="PackedScene" uid="uid://dfkw52x3df6sp" path="res://components/base_red.tscn" id="3_0kccs"]
 [ext_resource type="PackedScene" uid="uid://b8222r13n87gl" path="res://components/fish_red.tscn" id="4_p74bn"]
+[ext_resource type="PackedScene" uid="uid://upfo635imktf" path="res://audio/audio_manager.tscn" id="5_2gbpi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yjy37"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,3 +41,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304.999, 0, 0)
 
 [node name="Fish2" parent="." instance=ExtResource("4_p74bn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 205.412, 0, 0)
+
+[node name="AudioManager" parent="." instance=ExtResource("5_2gbpi")]
