@@ -12,15 +12,15 @@ public partial class Unit : Node3D
 	[Export] public int CurrencyAwarded { get; protected set; } = 10;
 
 	// Health of a Unit
-	protected int health;
-	public int maxHealth;
+	protected uint health;
+	public uint maxHealth;
 
 	public Unit Target = null;
 
 	protected Node3D _model;
 	protected Area3D _hitbox;
 
-	public Unit(int maxHealth) {
+	public Unit(uint maxHealth) {
 		this.maxHealth = maxHealth;
 		this.health = maxHealth;
 	}
@@ -29,6 +29,24 @@ public partial class Unit : Node3D
 	{
 		_model = GetNode<Node3D>("Model");
 		_hitbox = GetNode<Area3D>("Model/Hitbox");
+	}
+
+	/** Damage this unit. If the health falls to 0 then the Unit will be queued for deletion.
+	params:
+		power: attack damage.
+	returns:
+		bool: Was Unit killed.
+	*/
+	public bool Damage(uint power) {
+		if (health <= power) {
+			GD.Print("Unit Killed");
+			this.QueueFree();
+			return true;
+		}
+		else {
+			this.health -= power;
+			return false;
+		}
 	}
 
 }

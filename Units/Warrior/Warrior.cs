@@ -3,7 +3,7 @@ using System;
 
 public partial class Warrior : Unit
 {	
-	private static int MAX_HEALTH = 10;
+	private static uint MAX_HEALTH = 10;
 
 	private Timer _cooldownTimer;
 	private float _targetBaseX;
