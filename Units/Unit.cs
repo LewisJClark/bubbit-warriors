@@ -11,10 +11,19 @@ public partial class Unit : Node3D
 	[Export] public float MoveSpeed { get; protected set; } = 3;
 	[Export] public int CurrencyAwarded { get; protected set; } = 10;
 
+	// Health of a Unit
+	protected int health;
+	public int maxHealth;
+
 	public Unit Target = null;
 
 	protected Node3D _model;
 	protected Area3D _hitbox;
+
+	public Unit(int maxHealth) {
+		this.maxHealth = maxHealth;
+		this.health = maxHealth;
+	}
 
 	public override void _Ready()
 	{

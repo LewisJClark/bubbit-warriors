@@ -3,6 +3,7 @@ using System;
 
 public partial class Warrior : Unit
 {	
+	private static int MAX_HEALTH = 10;
 
 	private Timer _cooldownTimer;
 	private float _targetBaseX;
@@ -10,6 +11,10 @@ public partial class Warrior : Unit
 	private Vector3 _velocity;
 
 	private Area3D _detectionArea;
+
+	public Warrior() : base(MAX_HEALTH){
+		
+	}
 
 	public override void _Ready()
 	{
