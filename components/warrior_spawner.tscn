@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgxdnojlrs4hh"]
+
+[ext_resource type="Script" path="res://components/WarriorSpawner.cs" id="1_8oupp"]
+
+[node name="WarriorSpawner" type="Node3D"]
+script = ExtResource("1_8oupp")
+WarriorStructure = "res://components/WarriorPlaceholder.tscn"
