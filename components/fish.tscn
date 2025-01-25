@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://odt12l06fe1h"]
+
+[ext_resource type="PackedScene" uid="uid://bo52a50yerob8" path="res://models/fish.gltf" id="1_lggks"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m1akp"]
+radius = 7.64628
+height = 20.2797
+
+[node name="Fish" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.2115)
+
+[node name="fish" parent="." instance=ExtResource("1_lggks")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.774247, 0)
+shape = SubResource("CapsuleShape3D_m1akp")
