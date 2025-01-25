@@ -1,0 +1,137 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkqd7rhqd0xhk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k2xk"]
+bg_color = Color(0.634701, 0.801013, 0.876317, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhq60"]
+bg_color = Color(0.110491, 0.395632, 0.806277, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuf45"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ha1ey"]
+bg_color = Color(0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62x0g"]
+bg_color = Color(0.768627, 0.172549, 0.14902, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bottom" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Characters" type="Panel" parent="Bottom"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 342.0
+offset_bottom = 162.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8k2xk")
+
+[node name="CharacterOne" type="Panel" parent="Bottom/Characters"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 69.0
+offset_bottom = 30.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fhq60")
+
+[node name="CharacterTwo" type="Panel" parent="Bottom/Characters"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -30.0
+offset_right = 34.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fhq60")
+
+[node name="CharacterThree" type="Panel" parent="Bottom/Characters"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -30.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fhq60")
+
+[node name="Characters" type="Label" parent="Bottom/Characters"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_right = 42.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0556295, 0.00513787, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_xuf45")
+text = "Characters"
+horizontal_alignment = 1
+
+[node name="Powerups" type="Panel" parent="Bottom"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 2.0
+offset_right = 526.0
+offset_bottom = 164.0
+
+[node name="Button" type="Button" parent="Bottom/Powerups"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 51.0
+offset_right = 69.0
+offset_bottom = 101.0
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = -187.5
+offset_right = 384.0
+offset_bottom = -142.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ha1ey")
+theme_override_styles/fill = SubResource("StyleBoxFlat_62x0g")
+value = 20.0
+show_percentage = false
