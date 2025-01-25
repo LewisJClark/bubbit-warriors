@@ -7,7 +7,7 @@ using System;
 public partial class Unit : Node3D
 {
 	[Export] public Team Team = Team.Friendly;
-	[Export] public float AttackRange { get; protected set; } = 2;
+	[Export] public float AttackRange { get; protected set; } = 5;
 	[Export] public float MoveSpeed { get; protected set; } = 3;
 	[Export] public int CurrencyAwarded { get; protected set; } = 10;
 

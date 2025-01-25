@@ -13,9 +13,9 @@
 
 [sub_resource type="Environment" id="Environment_1ekpx"]
 fog_enabled = true
-fog_light_color = Color(0.267688, 0.392779, 0.88148, 1)
+fog_light_color = Color(0.258682, 0.491213, 0.502388, 1)
 fog_sun_scatter = 0.34
-fog_density = 0.0206
+fog_density = 0.02
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.366655, 0.241801, 0.999994, 1)
 
@@ -91,6 +91,7 @@ texture = ExtResource("3_lgqcv")
 [node name="Background1" type="Sprite3D" parent="Scenery"]
 transform = Transform3D(9.8, 0, 0, 0, 13, 0, 0, 0, 1, -25.9241, 0, -4.0018)
 centered = false
+shaded = true
 texture_filter = 0
 texture = ExtResource("4_pfq0b")
 
@@ -122,7 +123,7 @@ _moveSpeed = 24.0
 
 [node name="Light" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.710222, 0.540548, -0.450991, -0.0904624, 0.705399, 0.703015, 0.698142, -0.458499, 0.549888, 0, 6.47433, 9.77322)
-light_color = Color(0.67451, 0.607843, 0.972549, 1)
+light_color = Color(0.434209, 0.652329, 0.879778, 1)
 light_energy = 1.808
 light_volumetric_fog_energy = 2.131
 shadow_enabled = true
