@@ -3,5 +3,5 @@
 [ext_resource type="Script" path="res://components/WarriorSpawner.cs" id="1_8oupp"]
 
 [node name="WarriorSpawner" type="Node3D"]
-transform = Transform3D(54.0867, 0, 0, 0, 9.61423e-07, 1, 0, 21.9948, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_8oupp")
+WarriorStructure = "res://components/WarriorPlaceholder.tscn"
