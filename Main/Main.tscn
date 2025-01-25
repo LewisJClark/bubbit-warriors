@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://w5xogjt6s30d"]
+[gd_scene load_steps=10 format=3 uid="uid://w5xogjt6s30d"]
 
 [ext_resource type="Texture2D" uid="uid://b55jjgt6lyf3c" path="res://Resources/Initial_Background.png" id="1_r4787"]
 [ext_resource type="Script" path="res://Main/Main.cs" id="1_vt7ak"]
 [ext_resource type="PackedScene" uid="uid://cgxdnojlrs4hh" path="res://components/warrior_spawner.tscn" id="2_3t1tw"]
+[ext_resource type="Texture2D" uid="uid://c2fnty8btoprn" path="res://Resources/Coral Big.png" id="2_4kewl"]
+[ext_resource type="Texture2D" uid="uid://ble7thmjvkdey" path="res://Resources/Cave 1.png" id="3_lgqcv"]
 [ext_resource type="PackedScene" uid="uid://cm1vv07dkleyc" path="res://Base/Base.tscn" id="3_pc27v"]
 [ext_resource type="Script" path="res://Main/Camera.cs" id="4_puxik"]
 [ext_resource type="PackedScene" uid="uid://bsswasic24f8l" path="res://UI/UI.tscn" id="5_ahmwx"]
@@ -10,6 +12,72 @@
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_vt7ak")
+
+[node name="Scenery" type="Node3D" parent="."]
+
+[node name="Coral" type="Sprite3D" parent="Scenery"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.5893, 0, -4.13568)
+centered = false
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_4kewl")
+
+[node name="Coral2" type="Sprite3D" parent="Scenery"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -21.3273, -0.756773, -4.13568)
+centered = false
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_4kewl")
+
+[node name="Coral3" type="Sprite3D" parent="Scenery"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.52568, -0.25528, -4.13568)
+centered = false
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_4kewl")
+
+[node name="Coral4" type="Sprite3D" parent="Scenery"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -16.2138, -0.549907, -4.13568)
+centered = false
+flip_h = true
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_4kewl")
+
+[node name="Coral5" type="Sprite3D" parent="Scenery"]
+transform = Transform3D(2.988, 0.268091, 0, -0.268091, 2.988, 0, 0, 0, 3, 2.19099, -1.27619, -4.13568)
+centered = false
+flip_h = true
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_4kewl")
+
+[node name="Coral6" type="Sprite3D" parent="Scenery"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.1256, -0.756773, -4.13568)
+centered = false
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_4kewl")
+
+[node name="Coral7" type="Sprite3D" parent="Scenery"]
+transform = Transform3D(2.88022, -0.839236, 0, 0.839236, 2.88022, 0, 0, 0, 3, 8.29451, -1.07398, -4.13568)
+centered = false
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_4kewl")
+
+[node name="Cave1" type="Sprite3D" parent="Scenery"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 21.4162, 3.07258, -4.56265)
+shaded = true
+texture_filter = 0
+texture = ExtResource("3_lgqcv")
+
+[node name="Cave2" type="Sprite3D" parent="Scenery"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -21.3386, 3.07258, -4.70738)
+flip_h = true
+shaded = true
+texture_filter = 0
+texture = ExtResource("3_lgqcv")
 
 [node name="Ground" type="Sprite3D" parent="."]
 transform = Transform3D(9.82754, 0, 0, 0, -5.70057e-07, 10, 0, -13.0414, -4.37114e-07, 0, 0, 0)
@@ -32,12 +100,12 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -22.991, 0, 0)
 UI = NodePath("../CanvasLayer/UI")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.94087, 4.86544)
+transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0, 3.94087, 4.86544)
 script = ExtResource("4_puxik")
 _moveSpeed = 24.0
 
 [node name="Light" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.710222, 0.540547, -0.450991, 0, 0.640633, 0.767848, 0.703978, -0.545343, 0.454991, 0, 6.47433, 9.77322)
+transform = Transform3D(0.710222, 0.540548, -0.450991, -0.0904624, 0.705399, 0.703015, 0.698142, -0.458499, 0.549888, 0, 6.47433, 9.77322)
 light_color = Color(0.67451, 0.607843, 0.972549, 1)
 light_energy = 1.808
 light_volumetric_fog_energy = 2.131
