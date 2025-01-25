@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b55jjgt6lyf3c"
-path.s3tc="res://.godot/imported/Initial_Background.png-1bf0809b7f8a35c36e21670e82a64284.s3tc.ctex"
+uid="uid://bt7xyanogs1se"
+path.s3tc="res://.godot/imported/Blue pointer.png-1e23736e4b77d7570e63427e88940214.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Resources/Initial_Background.png"
-dest_files=["res://.godot/imported/Initial_Background.png-1bf0809b7f8a35c36e21670e82a64284.s3tc.ctex"]
+source_file="res://Resources/Blue pointer.png"
+dest_files=["res://.godot/imported/Blue pointer.png-1e23736e4b77d7570e63427e88940214.s3tc.ctex"]
 
 [params]
 

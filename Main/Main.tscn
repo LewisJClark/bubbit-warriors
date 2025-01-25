@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://w5xogjt6s30d"]
 
-[ext_resource type="Texture2D" uid="uid://c81js0v4lyhlu" path="res://Resources/Initial_Background.png" id="1_r4787"]
+[ext_resource type="Texture2D" uid="uid://b55jjgt6lyf3c" path="res://Resources/Initial_Background.png" id="1_r4787"]
 [ext_resource type="Script" path="res://Main/Main.cs" id="1_vt7ak"]
 [ext_resource type="PackedScene" uid="uid://cgxdnojlrs4hh" path="res://components/warrior_spawner.tscn" id="2_3t1tw"]
 [ext_resource type="PackedScene" uid="uid://cm1vv07dkleyc" path="res://Base/Base.tscn" id="3_pc27v"]
@@ -12,7 +12,7 @@
 script = ExtResource("1_vt7ak")
 
 [node name="Ground" type="Sprite3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, -4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0)
+transform = Transform3D(9.82754, 0, 0, 0, -5.70057e-07, 10, 0, -13.0414, -4.37114e-07, 0, 0, 0)
 transparent = false
 shaded = true
 texture_filter = 0

@@ -1,18 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm1vv07dkleyc"]
+[gd_scene load_steps=6 format=3 uid="uid://cm1vv07dkleyc"]
 
 [ext_resource type="Script" path="res://Base/Base.cs" id="1_67uot"]
 [ext_resource type="PackedScene" uid="uid://cg81uw7av2wy3" path="res://Units/Warrior/Warrior.tscn" id="2_i8561"]
 [ext_resource type="PackedScene" uid="uid://ikl81da8dfhv" path="res://models/base.gltf" id="2_j22jt"]
+[ext_resource type="PackedScene" uid="uid://dfkw52x3df6sp" path="res://components/base_red.tscn" id="4_oobyy"]
+[ext_resource type="Texture2D" uid="uid://bt7xyanogs1se" path="res://Resources/Blue pointer.png" id="5_ngvbg"]
 
 [node name="Base" type="Node3D"]
 script = ExtResource("1_67uot")
 UnitScenes = Array[PackedScene]([ExtResource("2_i8561")])
 UnitCosts = PackedInt32Array(5)
 
-[node name="Model" parent="." instance=ExtResource("2_j22jt")]
+[node name="FriendlyModel" parent="." instance=ExtResource("2_j22jt")]
+
+[node name="EnemyModel" parent="." instance=ExtResource("4_oobyy")]
 
 [node name="CurrencyTimer" type="Timer" parent="."]
 autostart = true
 
 [node name="SpawnPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50956, 0, 0)
+
+[node name="Pointer" type="Sprite3D" parent="SpawnPoint"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0.0730047, 0)
+texture_filter = 0
+texture = ExtResource("5_ngvbg")
