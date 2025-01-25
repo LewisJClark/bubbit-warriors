@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://w5xogjt6s30d"]
+[gd_scene load_steps=7 format=3 uid="uid://w5xogjt6s30d"]
 
 [ext_resource type="Texture2D" uid="uid://c81js0v4lyhlu" path="res://Resources/Initial_Background.png" id="1_r4787"]
+[ext_resource type="Script" path="res://Main/Main.cs" id="1_vt7ak"]
 [ext_resource type="PackedScene" uid="uid://cgxdnojlrs4hh" path="res://components/warrior_spawner.tscn" id="2_3t1tw"]
 [ext_resource type="PackedScene" uid="uid://cm1vv07dkleyc" path="res://Base/Base.tscn" id="3_pc27v"]
 [ext_resource type="Script" path="res://Main/Camera.cs" id="4_puxik"]
+[ext_resource type="PackedScene" uid="uid://bsswasic24f8l" path="res://UI/UI.tscn" id="5_ahmwx"]
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_vt7ak")
 
 [node name="Ground" type="Sprite3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, -4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0)
+transparent = false
+shaded = true
 texture_filter = 0
 texture = ExtResource("1_r4787")
 
@@ -16,20 +21,27 @@ texture = ExtResource("1_r4787")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9274, 0, 0)
 ground = NodePath("../Ground")
 
-[node name="EnemyBase" parent="." instance=ExtResource("3_pc27v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9274, 0, 0)
+[node name="EnemyBase" parent="." node_paths=PackedStringArray("UI") instance=ExtResource("3_pc27v")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 22.9274, 0, 0)
 Team = 1
+UI = NodePath("../CanvasLayer/UI")
 
-[node name="FriendlyBase" parent="." instance=ExtResource("3_pc27v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.991, 0, 0)
+[node name="FriendlyBase" parent="." node_paths=PackedStringArray("UI") instance=ExtResource("3_pc27v")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -22.991, 0, 0)
+UI = NodePath("../CanvasLayer/UI")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.94087, 4.86544)
 script = ExtResource("4_puxik")
 _moveSpeed = 24.0
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.344725, 0.938704, 0, -0.938704, 0.344725, 0, 6.47433, 9.77322)
+[node name="Light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.710222, 0.540547, -0.450991, 0, 0.640633, 0.767848, 0.703978, -0.545343, 0.454991, 0, 6.47433, 9.77322)
 light_color = Color(0.67451, 0.607843, 0.972549, 1)
 light_energy = 1.808
 light_volumetric_fog_energy = 2.131
+shadow_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("5_ahmwx")]

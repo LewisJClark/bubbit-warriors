@@ -4,8 +4,8 @@ using System;
 public partial class Warrior : Node3D
 {	
 	[Export] public Team Team { get; private set; } = Team.Friendly;
-	[Export] public float AttackRange { get; private set; } = 32;
-	[Export] public float MoveSpeed { get; private set; } = 8;
+	[Export] public float AttackRange { get; private set; } = 2;
+	[Export] public float MoveSpeed { get; private set; } = 3;
 
 	private Vector3 _targetPos;
 	private Node3D _model;
@@ -24,7 +24,7 @@ public partial class Warrior : Node3D
 			QueueFree();
 		}
 		else {
-			Position.MoveToward(_targetPos, MoveSpeed);
+			Position = new Vector3(Position.X + MoveSpeed * (float)delta, Position.Y, Position.Z);
 		}
 	}
 }
