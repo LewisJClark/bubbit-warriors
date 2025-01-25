@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cil3qrrc71w4h"
-path="res://.godot/imported/metal-disc.svg-99e68c6f863dcd34b347221297f90145.ctex"
+path="res://.godot/imported/metal-disc.svg-095607771404174f2481aae9f5fa45d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://metal-disc.svg"
-dest_files=["res://.godot/imported/metal-disc.svg-99e68c6f863dcd34b347221297f90145.ctex"]
+source_file="res://UI/metal-disc.svg"
+dest_files=["res://.godot/imported/metal-disc.svg-095607771404174f2481aae9f5fa45d6.ctex"]
 
 [params]
 
