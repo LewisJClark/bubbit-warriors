@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://w5xogjt6s30d"]
+[gd_scene load_steps=12 format=3 uid="uid://w5xogjt6s30d"]
 
 [ext_resource type="Texture2D" uid="uid://b55jjgt6lyf3c" path="res://Resources/Initial_Background.png" id="1_r4787"]
 [ext_resource type="Script" path="res://Main/Main.cs" id="1_vt7ak"]
@@ -10,6 +10,14 @@
 [ext_resource type="Script" path="res://Main/Camera.cs" id="4_puxik"]
 [ext_resource type="PackedScene" uid="uid://bsswasic24f8l" path="res://UI/UI.tscn" id="5_ahmwx"]
 [ext_resource type="PackedScene" uid="uid://bshaq34gdj38m" path="res://EnemyPlayerController/EnemyPlayerController.tscn" id="7_pxa2x"]
+
+[sub_resource type="Environment" id="Environment_1ekpx"]
+fog_enabled = true
+fog_light_color = Color(0.267688, 0.392779, 0.88148, 1)
+fog_sun_scatter = 0.34
+fog_density = 0.0206
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.366655, 0.241801, 0.999994, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_vt7ak")
@@ -108,6 +116,7 @@ UI = NodePath("../CanvasLayer/UI")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0, 3.94087, 4.86544)
+environment = SubResource("Environment_1ekpx")
 script = ExtResource("4_puxik")
 _moveSpeed = 24.0
 
