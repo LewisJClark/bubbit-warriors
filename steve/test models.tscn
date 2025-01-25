@@ -1,7 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx3wyn7yy41gw"]
+[gd_scene load_steps=6 format=3 uid="uid://cx3wyn7yy41gw"]
 
-[ext_resource type="PackedScene" uid="uid://4u8plx0x1pol" path="res://components/base.tscn" id="1_dqtks"]
+[ext_resource type="PackedScene" uid="uid://ckk3f8of0y3lf" path="res://components/base.tscn" id="1_dqtks"]
+[ext_resource type="PackedScene" uid="uid://odt12l06fe1h" path="res://components/fish.tscn" id="2_1wet0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yjy37"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_0y7bm"]
+sky_material = SubResource("ProceduralSkyMaterial_yjy37")
+
+[sub_resource type="Environment" id="Environment_501i0"]
+background_mode = 2
+sky = SubResource("Sky_0y7bm")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="TestModels" type="Node3D"]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_501i0")
+
 [node name="Base" parent="." instance=ExtResource("1_dqtks")]
+
+[node name="Fish" parent="." instance=ExtResource("2_1wet0")]
+transform = Transform3D(0.846398, 0, -0.532551, 0, 1, 0, 0.532551, 0, 0.846398, 50.8162, 0, 3.08383)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.427642, 0, 0.903948, 0, 1, 0, -0.903948, 0, 0.427642, 76.6104, 19.4606, 69.1935)
