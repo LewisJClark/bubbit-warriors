@@ -53,4 +53,9 @@ public partial class Unit : Node3D
 		}
 	}
 
+	protected void MoveTowards(Vector3 target, double delta) {
+		Vector3 velocity = Position.DirectionTo(target) * MoveSpeed * (float)delta;
+		Position += velocity;
+	}
+
 }

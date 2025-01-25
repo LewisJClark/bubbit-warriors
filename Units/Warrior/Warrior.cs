@@ -10,6 +10,7 @@ public partial class Warrior : Unit
 	private static uint MAX_HEALTH = 10;
 	private static uint BASE_DAMAGE = 2;
 	private static double BASE_ATTACK_COOLDOWN = 1.0;
+	private static float BASE_ATTACK_DISTANCE = 1.0f;
 
 	private Timer _cooldownTimer;
 	private float _targetBaseX;
@@ -51,13 +52,16 @@ public partial class Warrior : Unit
 		if (Math.Abs(distToBase) < AttackRange)
 			AttackBase();
 		else if (target != null) {
-			LookAt(Position.DirectionTo(target.Position));
-			AttackTarget(target);
+			LookAt(target.Position);
+			if (Position.DistanceTo(target.Position) < BASE_ATTACK_DISTANCE)
+				AttackTarget(target);
+			else
+				MoveTowards(target.Position, delta);
 		}
 		else {
-			LookAt(new Vector3(_targetBaseX, Position.Y, Position.Z));
-			Vector3 velocity = Position.DirectionTo(_targetBasePosition) * MoveSpeed * (float)delta;
-			Position += velocity;
+			Vector3 baseTarget = new Vector3(_targetBaseX, Position.Y, Position.Z);
+			LookAt(baseTarget);
+			MoveTowards(baseTarget, delta);
 		}
 	}
 
@@ -113,5 +117,6 @@ public partial class Warrior : Unit
 		_localEnemyUnits.Remove(unit);
 		// GD.Print("Unit removed");
 	}
+
 
 }
