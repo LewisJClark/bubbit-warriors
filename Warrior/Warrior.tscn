@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg81uw7av2wy3"]
+
+[ext_resource type="Script" path="res://Warrior/Warrior.cs" id="1_0xodw"]
+[ext_resource type="PackedScene" uid="uid://bo52a50yerob8" path="res://models/fish.gltf" id="1_ebibn"]
+
+[node name="Warrior" type="Node3D"]
+script = ExtResource("1_0xodw")
+
+[node name="Model" parent="." instance=ExtResource("1_ebibn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.893234, 0)
