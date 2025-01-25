@@ -27,23 +27,30 @@ public partial class Base : Node3D
 	public int Health { get; private set; } = 10;
 	public int Currency { get; private set; } = 100;
 
+	private Node3D _friendlyModel;
+	private Node3D _enemyModel;
 	private Timer _currencyTimer;
 	private Marker3D _spawnPoint;
 
 	public override void _Ready()
 	{
+		_friendlyModel = GetNode<Node3D>("FriendlyModel");
+		_enemyModel = GetNode<Node3D>("EnemyModel");
 		_currencyTimer = GetNode<Timer>("CurrencyTimer");
-		_currencyTimer.Timeout += () => { 
+		_currencyTimer.Timeout += () => {
 			Currency += CurrencyPerSecond;
 			UI.SetCurrencyAmount(Team, Currency);
 		};
 
 		if (Team == Team.Friendly) {
+			_enemyModel.Visible = false;
 			UI.OnUnitButtonPressed += (int unitType) => SpawnUnit(unitType);
 			Game.FriendlyBase = this;
 		}
-		else 
+		else {
+			_friendlyModel.Visible = false;
 			Game.EnemyBase = this;
+		}
 
 		_spawnPoint = GetNode<Marker3D>("SpawnPoint");
 	}
@@ -51,6 +58,10 @@ public partial class Base : Node3D
     public override void _Process(double delta)
     {
         base._Process(delta);
+		float newZ = _spawnPoint.Position.Z;
+		newZ += Input.GetAxis("MoveSpawnerUp", "MoveSpawnerDown") * 3f * (float)delta;
+		newZ = Math.Clamp(newZ, -2.4f, 2.4f);
+		_spawnPoint.Position = new Vector3(_spawnPoint.Position.X, _spawnPoint.Position.Y, newZ);
     }
 
     public void Attack(int damage)
