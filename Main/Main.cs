@@ -16,8 +16,7 @@ public partial class Main : Node3D
 
 	}
 
-	private void UnitSpawned(Node3D unit) {
-		GD.Print("Spawning unit!");
+	private void UnitSpawned(Unit unit) {
 		AddChild(unit);
 	}
 }

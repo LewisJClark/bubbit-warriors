@@ -4,7 +4,8 @@ using System;
 public enum Team 
 {
 	Friendly,
-	Enemy
+	Enemy,        // AI.
+	EnemyPlayer,
 }
 
 public partial class Base : Node3D
@@ -12,21 +13,22 @@ public partial class Base : Node3D
 	public delegate void BaseDestroyedHandler(Base destroyed);
 	public BaseDestroyedHandler OnDestroyed;
 
-	public delegate void UnitSpawnedHandler(Node3D unit);
+	public delegate void UnitSpawnedHandler(Unit unit);
 	public UnitSpawnedHandler OnUnitSpawned;
 
 	[Export] public Team Team = Team.Friendly;
 	[Export] public Ui UI;
 	[Export] public int CurrencyPerSecond = 10;
 
-	// Uunit scenes and costs.
-	[Export] public PackedScene[] _unitScenes;
-	[Export] private int[] _unitCosts;
+	// Unit scenes and costs.
+	[Export] public PackedScene[] UnitScenes;
+	[Export] public int[] UnitCosts;
 
 	public int Health { get; private set; } = 10;
 	public int Currency { get; private set; } = 100;
 
 	private Timer _currencyTimer;
+	private Marker3D _spawnPoint;
 
 	public override void _Ready()
 	{
@@ -42,9 +44,16 @@ public partial class Base : Node3D
 		}
 		else 
 			Game.EnemyBase = this;
+
+		_spawnPoint = GetNode<Marker3D>("SpawnPoint");
 	}
 
-	public void Attack(int damage)
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+    }
+
+    public void Attack(int damage)
 	{
 		if (Currency >= damage) 
 		{
@@ -63,12 +72,13 @@ public partial class Base : Node3D
 	{
 		switch (unitType) {
 			case 0:
-				if (Currency < _unitCosts[unitType])
+				if (Currency < UnitCosts[unitType])
 					return;
-				Currency -= _unitCosts[unitType];
-				var warrior = _unitScenes[unitType].Instantiate<Warrior>();
+				Currency -= UnitCosts[unitType];
+				var warrior = UnitScenes[unitType].Instantiate<Warrior>();
+				warrior.Team = Team;
 				OnUnitSpawned?.Invoke(warrior);
-				warrior.GlobalPosition = Position;
+				warrior.GlobalPosition = _spawnPoint.GlobalPosition;
 				break;
 		}
 		UI.SetCurrencyAmount(Team, Currency);

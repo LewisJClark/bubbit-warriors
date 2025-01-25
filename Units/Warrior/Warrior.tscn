@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg81uw7av2wy3"]
+
+[ext_resource type="Script" path="res://Units/Warrior/Warrior.cs" id="1_0xodw"]
+[ext_resource type="PackedScene" uid="uid://bo52a50yerob8" path="res://models/fish.gltf" id="1_ebibn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j4b0v"]
+radius = 0.3
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cjp5i"]
+height = 0.5
+radius = 0.8
+
+[node name="Warrior" type="Node3D"]
+script = ExtResource("1_0xodw")
+
+[node name="Model" parent="." instance=ExtResource("1_ebibn")]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0, 0.267724, 0)
+
+[node name="Hitbox" type="Area3D" parent="Model"]
+transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 0, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="Model/Hitbox"]
+shape = SubResource("SphereShape3D_j4b0v")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="DetectionArea" type="Area3D" parent="."]
+
+[node name="Shape" type="CollisionShape3D" parent="DetectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241704, 0)
+shape = SubResource("CylinderShape3D_cjp5i")

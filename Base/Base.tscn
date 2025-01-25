@@ -1,15 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://cm1vv07dkleyc"]
 
 [ext_resource type="Script" path="res://Base/Base.cs" id="1_67uot"]
-[ext_resource type="PackedScene" uid="uid://cg81uw7av2wy3" path="res://Warrior/Warrior.tscn" id="2_i8561"]
+[ext_resource type="PackedScene" uid="uid://cg81uw7av2wy3" path="res://Units/Warrior/Warrior.tscn" id="2_i8561"]
 [ext_resource type="PackedScene" uid="uid://ikl81da8dfhv" path="res://models/base.gltf" id="2_j22jt"]
 
 [node name="Base" type="Node3D"]
 script = ExtResource("1_67uot")
-_unitScenes = Array[PackedScene]([ExtResource("2_i8561")])
-_unitCosts = PackedInt32Array(5)
+UnitScenes = Array[PackedScene]([ExtResource("2_i8561")])
+UnitCosts = PackedInt32Array(5)
 
 [node name="Model" parent="." instance=ExtResource("2_j22jt")]
 
 [node name="CurrencyTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50956, 0, 0)

@@ -19,6 +19,7 @@ public partial class Ui : Control
 	}
 
 	public void SetCurrencyAmount(Team team, int amount) {
-		_currencyLabel.Text = $"Bubbits: {amount}";
+		if (team == Team.Friendly)
+			_currencyLabel.Text = $"Bubbits: {amount}";
 	}
 }

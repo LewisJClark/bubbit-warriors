@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://w5xogjt6s30d"]
+[gd_scene load_steps=8 format=3 uid="uid://w5xogjt6s30d"]
 
 [ext_resource type="Texture2D" uid="uid://c81js0v4lyhlu" path="res://Resources/Initial_Background.png" id="1_r4787"]
 [ext_resource type="Script" path="res://Main/Main.cs" id="1_vt7ak"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cm1vv07dkleyc" path="res://Base/Base.tscn" id="3_pc27v"]
 [ext_resource type="Script" path="res://Main/Camera.cs" id="4_puxik"]
 [ext_resource type="PackedScene" uid="uid://bsswasic24f8l" path="res://UI/UI.tscn" id="5_ahmwx"]
+[ext_resource type="PackedScene" uid="uid://bshaq34gdj38m" path="res://EnemyPlayerController/EnemyPlayerController.tscn" id="7_pxa2x"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_vt7ak")
@@ -22,7 +23,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9274, 0, 0)
 ground = NodePath("../Ground")
 
 [node name="EnemyBase" parent="." node_paths=PackedStringArray("UI") instance=ExtResource("3_pc27v")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 22.9274, 0, 0)
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 22.9274, 0, 0)
 Team = 1
 UI = NodePath("../CanvasLayer/UI")
 
@@ -41,6 +42,9 @@ light_color = Color(0.67451, 0.607843, 0.972549, 1)
 light_energy = 1.808
 light_volumetric_fog_energy = 2.131
 shadow_enabled = true
+
+[node name="EnemyPlayerController" parent="." node_paths=PackedStringArray("ControlledBase") instance=ExtResource("7_pxa2x")]
+ControlledBase = NodePath("../EnemyBase")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

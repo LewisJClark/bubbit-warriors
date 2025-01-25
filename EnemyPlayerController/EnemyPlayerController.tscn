@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bshaq34gdj38m"]
+
+[ext_resource type="Script" path="res://EnemyPlayerController/EnemyPlayerController.cs" id="1_f8apm"]
+
+[node name="EnemyPlayerController" type="Node3D"]
+script = ExtResource("1_f8apm")
+
+[node name="SpawnCooldownTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
