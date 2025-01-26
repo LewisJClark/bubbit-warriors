@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbr53iarrn7by"]
+
+[ext_resource type="PackedScene" uid="uid://bcrfbyodgket3" path="res://components/pufferfish.tscn" id="1_ai5o8"]
+[ext_resource type="Material" uid="uid://cpse7cs5d6bnr" path="res://models/materials/pufferfish_red.tres" id="2_1hl4u"]
+
+[node name="Pufferfish" instance=ExtResource("1_ai5o8")]
+
+[node name="pufferfish" parent="pufferfishModel/pufferFish/Skeleton3D" index="0"]
+material_override = ExtResource("2_1hl4u")
+
+[editable path="pufferfishModel"]
