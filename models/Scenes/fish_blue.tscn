@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1nl3ythl8y6v"]
+
+[ext_resource type="PackedScene" uid="uid://bo52a50yerob8" path="res://models/fish.gltf" id="1_iyjf6"]
+
+[node name="fish" instance=ExtResource("1_iyjf6")]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0, 0.25, 0)

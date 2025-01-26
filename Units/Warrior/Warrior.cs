@@ -7,6 +7,9 @@ using System.Linq;
 
 public partial class Warrior : Unit
 {	
+	[Export] PackedScene fish_blue;
+	[Export] PackedScene fish_red;
+
 	private static uint MAX_HEALTH = 10;
 	private static uint BASE_DAMAGE = 2;
 	private static double BASE_ATTACK_COOLDOWN = 1.0;
@@ -21,20 +24,33 @@ public partial class Warrior : Unit
 	private Area3D _detectionArea;
 	private List<Unit> _localEnemyUnits;
 
+
 	private bool _canAttack = true;
 
-	public Warrior() : base(MAX_HEALTH){
-		
+	public Warrior() : base(MAX_HEALTH) {
+		_localEnemyUnits = new List<Unit>();
 	}
 
 	public override void _Ready()
 	{
 		base._Ready();
 
-		_targetBaseX = Team == Team.Friendly ? Game.EnemyBase.Position.X : Game.FriendlyBase.Position.X;
-		_targetBasePosition = Team == Team.Friendly ? Game.EnemyBase.Position : Game.FriendlyBase.Position;
-
-		_localEnemyUnits = new List<Unit>();
+		switch (Team) {
+			case Team.Friendly:
+				_targetBaseX = Game.EnemyBase.Position.X;
+				_targetBasePosition = Game.EnemyBase.Position;
+				_unitModel = fish_blue.Instantiate<Node3D>();
+				AddChild(_unitModel);
+				break;
+			case Team.Enemy:
+				_targetBaseX = Game.FriendlyBase.Position.X;
+				_targetBasePosition = Game.FriendlyBase.Position;
+				_unitModel = fish_red.Instantiate<Node3D>();
+				AddChild(_unitModel);
+				break;
+			default:
+				throw new ArgumentException("Unit team is unrecognised");
+		}
 
 		_detectionArea = GetNode<Area3D>("DetectionArea");
 		_detectionArea.AreaEntered += OnAreaEntered;

@@ -1,6 +1,5 @@
 [gd_scene load_steps=12 format=3 uid="uid://w5xogjt6s30d"]
 
-[ext_resource type="Texture2D" uid="uid://b55jjgt6lyf3c" path="res://Resources/Initial_Background.png" id="1_r4787"]
 [ext_resource type="Script" path="res://Main/Main.cs" id="1_vt7ak"]
 [ext_resource type="PackedScene" uid="uid://cgxdnojlrs4hh" path="res://components/warrior_spawner.tscn" id="2_3t1tw"]
 [ext_resource type="Texture2D" uid="uid://c2fnty8btoprn" path="res://Resources/Coral Big.png" id="2_4kewl"]
@@ -9,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bw2a1hidtakvc" path="res://Resources/Background 1.png" id="4_pfq0b"]
 [ext_resource type="Script" path="res://Main/Camera.cs" id="4_puxik"]
 [ext_resource type="PackedScene" uid="uid://bsswasic24f8l" path="res://UI/UI.tscn" id="5_ahmwx"]
+[ext_resource type="Texture2D" uid="uid://crrqk8ibofiw5" path="res://Resources/Bottom 2.png" id="5_pu2bk"]
 [ext_resource type="PackedScene" uid="uid://bshaq34gdj38m" path="res://EnemyPlayerController/EnemyPlayerController.tscn" id="7_pxa2x"]
 
 [sub_resource type="Environment" id="Environment_1ekpx"]
@@ -95,18 +95,18 @@ texture_filter = 0
 texture = ExtResource("4_pfq0b")
 
 [node name="Ground" type="Sprite3D" parent="."]
-transform = Transform3D(9.82754, 0, 0, 0, -5.70057e-07, 10, 0, -13.0414, -4.37114e-07, 0, 0, 0)
+transform = Transform3D(9.82754, 0, 0, 0, -5.70058e-07, 10, 0, -13.0414, -4.37114e-07, 0, 0, 0)
 transparent = false
 shaded = true
 texture_filter = 0
-texture = ExtResource("1_r4787")
+texture = ExtResource("5_pu2bk")
 
 [node name="WarriorSpawner" parent="." node_paths=PackedStringArray("ground") instance=ExtResource("2_3t1tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9274, 0, 0)
 ground = NodePath("../Ground")
 
 [node name="EnemyBase" parent="." node_paths=PackedStringArray("UI") instance=ExtResource("3_pc27v")]
-transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 22.9274, 0, 0)
+transform = Transform3D(-1.5, 0, -2.26494e-07, 0, 1.5, 0, 2.26494e-07, 0, -1.5, 22.9274, 0, 0)
 Team = 1
 UI = NodePath("../CanvasLayer/UI")
 
