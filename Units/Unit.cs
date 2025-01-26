@@ -97,7 +97,7 @@ public partial class Unit : CharacterBody3D
 	public bool Damage(uint power) {
 		if (health <= power) {
 			this.QueueFree();
-			EmitSignal(SignalName.HealthDepleted);
+			// EmitSignal(SignalName.HealthDepleted);
 			return true;
 		}
 		else {

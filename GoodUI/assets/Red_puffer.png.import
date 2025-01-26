@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq68x8yt2u3xq"
-path="res://.godot/imported/Blue_puffer.png-21052744764569509c3e0a96d16a5f40.ctex"
+uid="uid://c4bsnw6gv3gen"
+path="res://.godot/imported/Red_puffer.png-600b46a23d0ae7df0f296ac12343bc4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Good UI/assets/Blue_puffer.png"
-dest_files=["res://.godot/imported/Blue_puffer.png-21052744764569509c3e0a96d16a5f40.ctex"]
+source_file="res://GoodUI/assets/Red_puffer.png"
+dest_files=["res://.godot/imported/Red_puffer.png-600b46a23d0ae7df0f296ac12343bc4e.ctex"]
 
 [params]
 
