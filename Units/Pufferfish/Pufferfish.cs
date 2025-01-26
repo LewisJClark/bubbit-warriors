@@ -97,7 +97,7 @@ public partial class Pufferfish : Unit
 		}
 
 		foreach (Unit unit in targets) {
-			unit.Damage(BASE_DAMAGE * 100);
+			unit.Damage(BASE_DAMAGE);
 		}
 
 		_canAttack = false;
