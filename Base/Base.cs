@@ -66,18 +66,17 @@ public partial class Base : Node3D
 		}
     }
 
-    public void Attack(int damage)
+    public void Damage(uint damage)
 	{
 		if (Currency >= damage) 
 		{
-			Currency -= damage;
+			Currency -= (int)damage;
 			UI.SetCurrencyAmount(Team, Currency);
 		}
 		else 
 		{
-			damage -= Currency;
+			Health -= (int)damage - Currency;
 			Currency = 0;
-			Health -= damage;
 		}
 	}
 

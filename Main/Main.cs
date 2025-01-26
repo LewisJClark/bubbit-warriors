@@ -16,7 +16,16 @@ public partial class Main : Node3D
 
 	}
 
-	private void UnitSpawned(Unit unit) {
+    public override void _Process(double delta)
+    {
+        if (Input.IsPhysicalKeyPressed(Key.Shift))
+			Game.ShowTargets = true;
+		else
+			Game.ShowTargets = false;
+		// Game.ShowTargets = true;
+    }
+
+    private void UnitSpawned(Unit unit) {
 		AddChild(unit);
 	}
 }

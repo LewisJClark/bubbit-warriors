@@ -31,6 +31,8 @@ public partial class Unit : CharacterBody3D
 	// Collision detection
 	private Area3D _collisionArea;
 	private List<Unit> _collisionUnits;
+	private Vector3 lastMoveView = new Vector3();
+	private TargetLine _targetLine;
 
 	public Unit(uint maxHealth) {
 		this.maxHealth = maxHealth;
@@ -47,6 +49,10 @@ public partial class Unit : CharacterBody3D
 		_collisionArea = GetNode<Area3D>("CollisionArea");
 		_collisionArea.AreaEntered += _OnCollisionAreaEnter;
 		_collisionArea.AreaExited += _OnCollisionAreaExit;
+
+		_targetLine = GetNode<TargetLine>("DebugTargetLine");
+
+		
 	}
 
 	/** Damage this unit. If the health falls to 0 then the Unit will be queued for deletion.
@@ -68,10 +74,16 @@ public partial class Unit : CharacterBody3D
 		}
 	}
 
-	protected void MoveTowards(Vector3 target, double delta) {
+	protected void MoveTowards(Vector3 target, double delta, float spreadFactor) {
+		if (Game.ShowTargets) {
+			_targetLine.setStart(Position);
+			_targetLine.SetEnd(target);
+		}
+
 		Vector3 directionVector = Position.DirectionTo(target);
 
 		Vector3 separationVector = new Vector3();
+		Vector3 finalVelocity;
 		// _collisionUnits.RemoveAll((unit) => IsInstanceValid(unit));
 		if (_collisionUnits.Count > 0) {
 			foreach (Unit unit in _collisionUnits) {
@@ -81,12 +93,25 @@ public partial class Unit : CharacterBody3D
 				separationVector += displacement / distance;
 			}
 			// separationVector = separationVector.LimitLength();
+			
+			finalVelocity = directionVector + separationVector * spreadFactor;
+
+		} else {
+			finalVelocity = directionVector;
 		}
 
-		Vector3 finalVelocity = directionVector + separationVector * 0.3f;
+		
+		
+		
 		// GD.Print(directionVector, separationVector, finalVelocity);
 
-		LookAt(Position + finalVelocity);
+		Vector3 newViewDirection = lastMoveView.Lerp(finalVelocity, (float)Math.Min(1.0, delta * 5.0));
+		if (Game.ShowTargets){
+			LookAt(target);
+		} else {
+			LookAt(Position + newViewDirection);
+		}
+		lastMoveView = newViewDirection;
 		// MoveAndCollide(finalVelocity* MoveSpeed * (float)delta);
 		Position += finalVelocity* MoveSpeed * (float)delta;
 		// Velocity = velocity;

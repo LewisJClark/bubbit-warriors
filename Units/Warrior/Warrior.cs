@@ -49,7 +49,7 @@ public partial class Warrior : Unit
 				AddChild(_unitModel);
 				break;
 			default:
-				throw new ArgumentException("Unit team is unrecognised");
+				throw new NotImplementedException("Unit team is unrecognised");
 		}
 
 		_detectionArea = GetNode<Area3D>("DetectionArea");
@@ -65,30 +65,30 @@ public partial class Warrior : Unit
 		var distToBase = _targetBaseX - Position.X;
 		Unit target = _FindUnitToAttack();
 
-		if (Math.Abs(distToBase) < AttackRange)
-			AttackBase();
-		else if (target != null) {
+		if (target != null) {
 			// LookAt(target.Position);
 			if (Position.DistanceTo(target.Position) < BASE_ATTACK_DISTANCE)
 				AttackTarget(target);
 			else
-				MoveTowards(target.Position, delta);
-		}
+				MoveTowards(target.Position, delta, 0.3f);
+		} else if (Math.Abs(distToBase) < AttackRange)
+			AttackBase();
 		else {
 			Vector3 baseTarget = new Vector3(_targetBaseX, Position.Y, Position.Z);
 			// LookAt(baseTarget);
-			MoveTowards(baseTarget, delta);
+			MoveTowards(baseTarget, delta, 0.005f);
 		}
 	}
 
 	private Unit _FindUnitToAttack() {
+		_localEnemyUnits.RemoveAll((unit) => !IsInstanceValid(unit));
 		if (_localEnemyUnits.Count == 0) return null;
 		Unit target = _localEnemyUnits[0];
 		float distance = Position.DistanceTo(target.Position);
 		foreach (Unit unit in _localEnemyUnits) {
-			float newDistance = Position.DistanceTo(target.Position);
+			float newDistance = Position.DistanceTo(unit.Position);
 			if (newDistance < distance) {
-				newDistance = distance;
+				distance = newDistance;
 				target = unit;
 			}
 		}
@@ -97,7 +97,16 @@ public partial class Warrior : Unit
 
     private void AttackBase() 
 	{
-
+		switch (Team) {
+			case Team.Friendly:
+				Game.EnemyBase.Damage(BASE_DAMAGE);
+				break;
+			case Team.Enemy:
+				Game.FriendlyBase.Damage(BASE_DAMAGE);
+				break;
+			default:
+				throw new NotImplementedException("Unit team is unrecognised");
+		}
 	}
 
 	private void AttackTarget(Unit target)
@@ -109,6 +118,7 @@ public partial class Warrior : Unit
 			GD.PrintErr("Cannot attack Null Target");
 			return;
 		}
+		LookAt(target.Position);
 
 		bool killed = target.Damage(BASE_DAMAGE);
 		
@@ -123,7 +133,7 @@ public partial class Warrior : Unit
             return;
 		
 		_localEnemyUnits.Add(unit);
-		unit.TreeExiting += () => _localEnemyUnits.Remove(unit);
+		// unit.TreeExiting += () => _localEnemyUnits.Remove(unit);
 		// GD.Print("Unit added");
     }
 
