@@ -25,10 +25,14 @@ public partial class Ui : Control
     public override void _Process(double delta)
     {
         base._Process(delta);
-		if (Input.IsActionJustPressed("SpawnWarrior")) 
-			OnUnitButtonPressed?.Invoke(0);
-		if (Input.IsActionJustPressed("SpawnPufferfish"))
-			OnUnitButtonPressed?.Invoke(1);
+
+		if (Input.IsActionJustPressed("ui_accept")) 
+			Game.FriendlyBase.SpawnUnit(0);
+			
+		if (Game.IsLocalMultiplayer) {
+			if (Input.IsActionJustPressed("ui_accept_p2"))
+				Game.EnemyBase.SpawnUnit(0);
+		}
     }
 
     public void SetCurrencyAmount(Team team, int amount) {

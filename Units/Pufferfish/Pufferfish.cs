@@ -81,7 +81,6 @@ public partial class Pufferfish : Unit
 			return;
 		
 		if (target == null) {
-			GD.PrintErr("Cannot attack Null Target");
 			return;
 		}
 		LookAt(target.Position);
@@ -90,7 +89,6 @@ public partial class Pufferfish : Unit
 
 		List<Unit> targets = new List<Unit>();
 		foreach (Area3D hitbox in targetHitboxes) {
-			GD.Print(hitbox, hitbox.Owner, hitbox.Owner.Owner);
 			if (hitbox.Owner is not Unit unit || unit.Team == Team)
 				continue;
 			targets.Add(unit);
