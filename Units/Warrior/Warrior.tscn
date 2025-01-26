@@ -41,6 +41,8 @@ visible = false
 
 [node name="Hitbox" type="Area3D" parent="Model"]
 transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 0, 0)
+collision_layer = 8
+collision_mask = 8
 
 [node name="Shape" type="CollisionShape3D" parent="Model/Hitbox"]
 shape = SubResource("SphereShape3D_j4b0v")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://w5xogjt6s30d"]
+[gd_scene load_steps=14 format=3 uid="uid://w5xogjt6s30d"]
 
 [ext_resource type="Script" path="res://Main/Main.cs" id="1_vt7ak"]
 [ext_resource type="PackedScene" uid="uid://cgxdnojlrs4hh" path="res://components/warrior_spawner.tscn" id="2_3t1tw"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bsswasic24f8l" path="res://UI/UI.tscn" id="5_ahmwx"]
 [ext_resource type="Texture2D" uid="uid://crrqk8ibofiw5" path="res://Resources/Bottom 2.png" id="5_pu2bk"]
 [ext_resource type="PackedScene" uid="uid://bshaq34gdj38m" path="res://EnemyPlayerController/EnemyPlayerController.tscn" id="7_pxa2x"]
+[ext_resource type="PackedScene" uid="uid://cg81uw7av2wy3" path="res://Units/Warrior/Warrior.tscn" id="8_xpmnr"]
+[ext_resource type="PackedScene" uid="uid://bustsfsvolwu" path="res://Units/Pufferfish/Pufferfish.tscn" id="9_wog05"]
 
 [sub_resource type="Environment" id="Environment_1ekpx"]
 fog_enabled = true
@@ -113,6 +115,8 @@ UI = NodePath("../CanvasLayer/UI")
 [node name="FriendlyBase" parent="." node_paths=PackedStringArray("UI") instance=ExtResource("3_pc27v")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -22.991, 0, 0)
 UI = NodePath("../CanvasLayer/UI")
+UnitScenes = Array[PackedScene]([ExtResource("8_xpmnr"), ExtResource("9_wog05")])
+UnitCosts = PackedInt32Array(5, 10)
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0, 3.94087, 4.86544)

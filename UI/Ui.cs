@@ -12,7 +12,7 @@ public partial class Ui : Control
 	public override void _Ready()
 	{
 		_spawnButton = GetNode<Button>("SpawnButton");
-		_spawnButton.Pressed += () => OnUnitButtonPressed?.Invoke(0);
+		_spawnButton.Pressed += () => OnUnitButtonPressed?.Invoke(1);
 
 		_currencyLabel = GetNode<Label>("CurrencyLabel");
 		_spawnButton.GrabFocus();
