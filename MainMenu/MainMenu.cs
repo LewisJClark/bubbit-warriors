@@ -7,9 +7,11 @@ public partial class MainMenu : Control
 	[Export] private Button _quitButton;
 
 	[Export] private PackedScene _mainScene;
+	[Export] private AudioManager _audioManager;
 
 	public override void _Ready()
 	{
+		_audioManager.PlayMusicStream();
 		_singleplayerButton.Pressed += () => {
 			var main = _mainScene.Instantiate();
 			GetTree().Root.AddChild(main);
