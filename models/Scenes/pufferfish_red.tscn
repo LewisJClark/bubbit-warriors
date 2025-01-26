@@ -1,14 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbr53iarrn7by"]
+[gd_scene load_steps=3 format=3 uid="uid://du7wkeguyt3o3"]
 
-[ext_resource type="PackedScene" uid="uid://bcrfbyodgket3" path="res://models/Scenes/pufferfish.tscn" id="1_ai5o8"]
-[ext_resource type="Material" uid="uid://cpse7cs5d6bnr" path="res://models/materials/pufferfish_red.tres" id="2_1hl4u"]
+[ext_resource type="PackedScene" uid="uid://c32hw58ac08ij" path="res://models/pufferfish.gltf" id="1_g4vef"]
+[ext_resource type="Material" uid="uid://cpse7cs5d6bnr" path="res://models/materials/pufferfish_red.tres" id="2_5mq30"]
 
-[node name="Pufferfish" instance=ExtResource("1_ai5o8")]
+[node name="pufferfish2" instance=ExtResource("1_g4vef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 
-[node name="pufferfishModel" parent="." index="0"]
-transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 0, 1.5, 0)
-
-[node name="pufferfish" parent="pufferfishModel/pufferFish/Skeleton3D" index="0"]
-material_override = ExtResource("2_1hl4u")
-
-[editable path="pufferfishModel"]
+[node name="pufferfish" parent="pufferFish/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_5mq30")
