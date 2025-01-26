@@ -68,7 +68,7 @@ public partial class Warrior : Unit
 		if (Math.Abs(distToBase) < AttackRange)
 			AttackBase();
 		else if (target != null) {
-			LookAt(target.Position);
+			// LookAt(target.Position);
 			if (Position.DistanceTo(target.Position) < BASE_ATTACK_DISTANCE)
 				AttackTarget(target);
 			else
@@ -76,7 +76,7 @@ public partial class Warrior : Unit
 		}
 		else {
 			Vector3 baseTarget = new Vector3(_targetBaseX, Position.Y, Position.Z);
-			LookAt(baseTarget);
+			// LookAt(baseTarget);
 			MoveTowards(baseTarget, delta);
 		}
 	}
