@@ -106,10 +106,10 @@ public partial class Unit : CharacterBody3D
 	}
 
 	protected void MoveTowards(Vector3 target, double delta, float spreadFactor) {
-		if (Game.ShowTargets) {
-			_targetLine.setStart(Position);
-			_targetLine.SetEnd(target);
-		}
+		// if (Game.ShowTargets) {
+		// 	_targetLine.setStart(Position);
+		// 	_targetLine.SetEnd(target);
+		// }
 
 		Vector3 directionVector = Position.DirectionTo(target);
 
@@ -121,11 +121,11 @@ public partial class Unit : CharacterBody3D
 				Vector3 displacement = Position - unit.Position;
 				float distance = displacement.Length();
 				if (distance == 0) continue;
-				separationVector += displacement / distance;
+				separationVector += displacement.Normalized() / distance;
 			}
 			// separationVector = separationVector.LimitLength();
 			
-			finalVelocity = directionVector + separationVector * spreadFactor;
+			finalVelocity = (directionVector + separationVector * spreadFactor).Normalized();
 
 		} else {
 			finalVelocity = directionVector;
@@ -143,8 +143,8 @@ public partial class Unit : CharacterBody3D
 			LookAt(Position + newViewDirection);
 		}
 		lastMoveView = newViewDirection;
-		// MoveAndCollide(finalVelocity* MoveSpeed * (float)delta);
-		Position += finalVelocity* MoveSpeed * (float)delta;
+		MoveAndCollide(finalVelocity* MoveSpeed * (float)delta);
+		// Position += finalVelocity* MoveSpeed * (float)delta;
 		// Velocity = velocity;
 		// MoveAndSlide();
 
