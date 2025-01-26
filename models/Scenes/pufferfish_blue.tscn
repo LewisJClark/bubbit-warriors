@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc1hddgggs00h"]
+
+[ext_resource type="PackedScene" uid="uid://c32hw58ac08ij" path="res://models/pufferfish.gltf" id="1_ixg3p"]
+
+[node name="pufferfish2" instance=ExtResource("1_ixg3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)

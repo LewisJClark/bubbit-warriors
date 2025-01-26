@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bo52a50yerob8" path="res://models/fish.gltf" id="1_ebibn"]
 [ext_resource type="Script" path="res://Units/Pufferfish/Pufferfish.cs" id="1_rwnhk"]
-[ext_resource type="PackedScene" uid="uid://d1nl3ythl8y6v" path="res://models/Scenes/fish_blue.tscn" id="2_5ui8t"]
-[ext_resource type="PackedScene" uid="uid://oaqneysl8csh" path="res://models/Scenes/fish_red.tscn" id="3_ks8vq"]
+[ext_resource type="PackedScene" uid="uid://bc1hddgggs00h" path="res://models/Scenes/pufferfish_blue.tscn" id="2_a4ji4"]
+[ext_resource type="PackedScene" uid="uid://du7wkeguyt3o3" path="res://models/Scenes/pufferfish_red.tscn" id="3_2rdky"]
 [ext_resource type="Script" path="res://Units/Debug/TargetLine.cs" id="5_i415h"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_j4b0v"]
@@ -36,8 +36,8 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 motion_mode = 1
 script = ExtResource("1_rwnhk")
-fish_blue = ExtResource("2_5ui8t")
-fish_red = ExtResource("3_ks8vq")
+fish_blue = ExtResource("2_a4ji4")
+fish_red = ExtResource("3_2rdky")
 
 [node name="Model" parent="." instance=ExtResource("1_ebibn")]
 transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0, 0.267724, 0)
