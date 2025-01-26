@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://oaqneysl8csh"]
+
+[ext_resource type="PackedScene" uid="uid://bo52a50yerob8" path="res://models/fish.gltf" id="1_x5cue"]
+[ext_resource type="Material" uid="uid://cchw5i504ify" path="res://models/materials/fishSkin_red.tres" id="2_64opt"]
+
+[node name="fish" instance=ExtResource("1_x5cue")]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0, 0.25, 0)
+
+[node name="fish_lp" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_64opt")

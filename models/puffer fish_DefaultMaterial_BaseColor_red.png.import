@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt7xyanogs1se"
-path.s3tc="res://.godot/imported/Blue pointer.png-1e23736e4b77d7570e63427e88940214.s3tc.ctex"
+uid="uid://crumjkxux866c"
+path.s3tc="res://.godot/imported/puffer fish_DefaultMaterial_BaseColor_red.png-b4feea6cb286e213e63bbb21f91d2613.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Resources/Blue pointer.png"
-dest_files=["res://.godot/imported/Blue pointer.png-1e23736e4b77d7570e63427e88940214.s3tc.ctex"]
+source_file="res://models/puffer fish_DefaultMaterial_BaseColor_red.png"
+dest_files=["res://.godot/imported/puffer fish_DefaultMaterial_BaseColor_red.png-b4feea6cb286e213e63bbb21f91d2613.s3tc.ctex"]
 
 [params]
 
