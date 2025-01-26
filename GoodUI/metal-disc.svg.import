@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clf3mvci5oigp"
-path="res://.godot/imported/Mantis_blue_border.png-a85f64ed6599d9d943996c6ebe10c808.ctex"
+uid="uid://cil3qrrc71w4h"
+path="res://.godot/imported/metal-disc.svg-307b0458674087bdfc56106fd20a34df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Good UI/assets/Mantis_blue_border.png"
-dest_files=["res://.godot/imported/Mantis_blue_border.png-a85f64ed6599d9d943996c6ebe10c808.ctex"]
+source_file="res://GoodUI/metal-disc.svg"
+dest_files=["res://.godot/imported/metal-disc.svg-307b0458674087bdfc56106fd20a34df.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=10.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

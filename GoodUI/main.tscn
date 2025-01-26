@@ -1,13 +1,13 @@
 [gd_scene load_steps=40 format=3 uid="uid://dkqd7rhqd0xhk"]
 
-[ext_resource type="Script" path="res://Good UI/main.gd" id="1_kpu2t"]
-[ext_resource type="Texture2D" uid="uid://cmharftwvj1js" path="res://Good UI/assets/Blue_Fish.png" id="2_fohd6"]
-[ext_resource type="Texture2D" uid="uid://clf3mvci5oigp" path="res://Good UI/assets/Mantis_blue_border.png" id="3_43nht"]
-[ext_resource type="Texture2D" uid="uid://bq68x8yt2u3xq" path="res://Good UI/assets/Blue_puffer.png" id="4_5fjcg"]
-[ext_resource type="Texture2D" uid="uid://csv4ecyhqshrc" path="res://Good UI/assets/Red_fish.png" id="4_nolwd"]
-[ext_resource type="Texture2D" uid="uid://nwdrefpewacm" path="res://Good UI/assets/Red_puffer_updated.png" id="5_bbc50"]
-[ext_resource type="Texture2D" uid="uid://d3lg7jla3805l" path="res://Good UI/assets/Mantis_red_border.png" id="5_fiquw"]
-[ext_resource type="Texture2D" uid="uid://cj8el5gjr67cw" path="res://Good UI/two-coins.svg" id="8_jm3ga"]
+[ext_resource type="Script" path="res://GoodUI/UI.cs" id="1_bi076"]
+[ext_resource type="Texture2D" uid="uid://cmharftwvj1js" path="res://GoodUI/assets/Blue_Fish.png" id="2_fohd6"]
+[ext_resource type="Texture2D" uid="uid://clf3mvci5oigp" path="res://GoodUI/assets/Mantis_blue_border.png" id="3_43nht"]
+[ext_resource type="Texture2D" uid="uid://bq68x8yt2u3xq" path="res://GoodUI/assets/Blue_puffer.png" id="4_5fjcg"]
+[ext_resource type="Texture2D" uid="uid://csv4ecyhqshrc" path="res://GoodUI/assets/Red_fish.png" id="4_nolwd"]
+[ext_resource type="Texture2D" uid="uid://nwdrefpewacm" path="res://GoodUI/assets/Red_puffer_updated.png" id="5_bbc50"]
+[ext_resource type="Texture2D" uid="uid://d3lg7jla3805l" path="res://GoodUI/assets/Mantis_red_border.png" id="5_fiquw"]
+[ext_resource type="Texture2D" uid="uid://cj8el5gjr67cw" path="res://GoodUI/two-coins.svg" id="8_jm3ga"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k2xk"]
 bg_color = Color(0.634701, 0.801013, 0.876317, 1)
@@ -223,7 +223,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("_friendlyCharacter1", "_friendlyCharacter2", "_friendlyCharacter3", "_enemyCharacter1", "_enemyCharacter2", "_enemyCharacter3", "_friendlyCurrency", "_enemyCurrency", "_healthBar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -232,7 +232,16 @@ offset_left = 1.0
 offset_bottom = -201.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kpu2t")
+script = ExtResource("1_bi076")
+_friendlyCharacter1 = NodePath("Bottom/Characters/ButtonONE")
+_friendlyCharacter2 = NodePath("Bottom/Characters/ButtonTWO")
+_friendlyCharacter3 = NodePath("Bottom/Characters/ButtonThree")
+_enemyCharacter1 = NodePath("Bottom/Enemy/ButtonFOUR")
+_enemyCharacter2 = NodePath("Bottom/Enemy/ButtonFIVE")
+_enemyCharacter3 = NodePath("Bottom/Enemy/ButtonSIX")
+_friendlyCurrency = NodePath("Coins/CoinNumber")
+_enemyCurrency = NodePath("CoinsEnemy/CoinNumberEnemy")
+_healthBar = NodePath("HealthBar")
 
 [node name="Bottom" type="Panel" parent="."]
 layout_mode = 1
@@ -493,7 +502,7 @@ offset_bottom = 58.0
 grow_horizontal = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_ha1ey")
 theme_override_styles/fill = SubResource("StyleBoxFlat_62x0g")
-value = 20.0
+value = 100.0
 show_percentage = false
 
 [node name="Coins" type="Panel" parent="."]
@@ -575,16 +584,3 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 text = "18,000"
-
-[connection signal="pressed" from="Bottom/Characters/ButtonONE" to="." method="_on_button_one_pressed"]
-[connection signal="pressed" from="Bottom/Characters/ButtonONE" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="Bottom/Characters/ButtonTWO" to="." method="_on_button_two_pressed"]
-[connection signal="pressed" from="Bottom/Characters/ButtonTWO" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="Bottom/Characters/ButtonThree" to="." method="_on_button_four_pressed"]
-[connection signal="pressed" from="Bottom/Characters/ButtonThree" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="Bottom/Enemy/ButtonFOUR" to="." method="_on_button_three_pressed"]
-[connection signal="pressed" from="Bottom/Enemy/ButtonFOUR" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Bottom/Enemy/ButtonFIVE" to="." method="_on_button_five_pressed"]
-[connection signal="pressed" from="Bottom/Enemy/ButtonFIVE" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="Bottom/Enemy/ButtonSIX" to="." method="_on_button_six_pressed"]
-[connection signal="pressed" from="Bottom/Enemy/ButtonSIX" to="." method="_on_button_4_pressed"]

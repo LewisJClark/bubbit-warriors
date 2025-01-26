@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://frvwt71r462a"
-path="res://.godot/imported/icon.svg-c9c2a32fd2d5f8bc98ecd887f02eeda7.ctex"
+uid="uid://bq68x8yt2u3xq"
+path="res://.godot/imported/Blue_puffer.png-70405df7e75c3e4954ca7d8fa7b71535.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-c9c2a32fd2d5f8bc98ecd887f02eeda7.ctex"]
+source_file="res://GoodUI/assets/Blue_puffer.png"
+dest_files=["res://.godot/imported/Blue_puffer.png-70405df7e75c3e4954ca7d8fa7b71535.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
