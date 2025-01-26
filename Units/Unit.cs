@@ -70,6 +70,7 @@ public partial class Unit : CharacterBody3D
 
 		switch (Team) {
 			case Team.Friendly:
+				Game.AudioManager.PlayConfirmStream();
 				_targetBaseX = Game.EnemyBase.Position.X;
 				_targetBasePosition = Game.EnemyBase.Position;
 				_unitModel = fish_blue.Instantiate<Node3D>();

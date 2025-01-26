@@ -5,6 +5,8 @@ public partial class Main : Node3D
 {
 	private Base _friendlyBase;
 	private Base _enemyBase;
+	[Export]
+	private AudioManager _audioManager;
 
 	public override void _Ready()
 	{
@@ -13,6 +15,8 @@ public partial class Main : Node3D
 
 		_enemyBase = GetNode<Base>("EnemyBase");
 		_enemyBase.OnUnitSpawned += UnitSpawned;
+		_audioManager.PlayMusicStream();
+		Game.AudioManager = _audioManager;
 
 	}
 
