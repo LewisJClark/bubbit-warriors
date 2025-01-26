@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8mqrl7vtxiuj"]
 
 [ext_resource type="Script" path="res://GameOver/GameOver.cs" id="1_e5jgd"]
-[ext_resource type="Texture2D" uid="uid://l4xc2rukr34q" path="res://Resources/fish_red_icon.png" id="2_8rvpv"]
+[ext_resource type="Texture2D" uid="uid://l4xc2rukr34q" path="res://Resources/fish__red_icon.png" id="2_8rvpv"]
 
 [node name="GameOver" type="Control" node_paths=PackedStringArray("_gameOverLabel", "_mainMenuButton")]
 layout_mode = 3
@@ -46,4 +46,4 @@ theme_override_constants/margin_right = 64
 
 [node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Main Menu"
