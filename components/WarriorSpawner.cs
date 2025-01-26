@@ -21,11 +21,8 @@ public partial class WarriorSpawner : Node3D
 	{
 		rand = new Random();
 		// ground = GetNode<Sprite3D>("Main/Ground");
-		GD.Print("Got Ground: ", ground);
 		laneWidth = ground.PixelSize * ground.Scale.Y * ground.Texture.GetSize().Y * 0.5f;
-		GD.Print("Lane Width: ", laneWidth);
 		float laneEdge = ground.PixelSize * ground.Scale.X * ground.Texture.GetSize().X * 0.5f;
-		GD.Print("Lane Edge: ", laneEdge);
 		// Position = new Vector3(laneEdge, 0, 0);
 
 		warriorPrefab = GD.Load<PackedScene>(WarriorStructure);

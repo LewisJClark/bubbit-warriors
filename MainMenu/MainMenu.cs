@@ -20,6 +20,10 @@ public partial class MainMenu : Control
 			// Launch the game scene but without the
 			// AI enemy controller. Setting the Enemy base's
 			// team to Team.EnemyPlayer instead of Team.Enemy.
+			Game.IsLocalMultiplayer = true;
+			var main = _mainScene.Instantiate();
+			GetTree().Root.AddChild(main);
+			QueueFree();
 		};
 
 		_quitButton.Pressed += () => GetTree().Quit();

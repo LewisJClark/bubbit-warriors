@@ -77,6 +77,7 @@ public partial class Unit : CharacterBody3D
 				AddChild(_unitModel);
 				break;
 			case Team.Enemy:
+			case Team.EnemyPlayer:
 				_targetBaseX = Game.FriendlyBase.Position.X;
 				_targetBasePosition = Game.FriendlyBase.Position;
 				_unitModel = fish_red.Instantiate<Node3D>();
@@ -95,7 +96,6 @@ public partial class Unit : CharacterBody3D
 	*/
 	public bool Damage(uint power) {
 		if (health <= power) {
-			GD.Print("Unit Killed");
 			this.QueueFree();
 			EmitSignal(SignalName.HealthDepleted);
 			return true;
@@ -135,7 +135,6 @@ public partial class Unit : CharacterBody3D
 		
 		
 		
-		// GD.Print(directionVector, separationVector, finalVelocity);
 
 		Vector3 newViewDirection = lastMoveView.Lerp(finalVelocity, (float)Math.Min(1.0, delta * 5.0));
 		if (Game.ShowTargets){
@@ -186,20 +185,17 @@ public partial class Unit : CharacterBody3D
 
 	private void _OnDetectionAreaEntered(Area3D other) 
 	{
-		// GD.Print("Unit entered");
         if (other.Owner is not Unit unit || unit.Team == Team)
             return;
 		
 		_localEnemyUnits.Add(unit);
 		// unit.TreeExiting += () => _localEnemyUnits.Remove(unit);
-		// GD.Print("Unit added");
     }
 
 	private void _OnDetectionAreaExited(Area3D other)	{
 		if (other.Owner is not Unit unit)
             return;
 		_localEnemyUnits.Remove(unit);
-		// GD.Print("Unit removed");
 	}
 
 }
