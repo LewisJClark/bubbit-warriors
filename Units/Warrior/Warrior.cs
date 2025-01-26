@@ -31,6 +31,7 @@ public partial class Warrior : Unit
 			case Team.Friendly:
 				break;
 			case Team.Enemy:
+			case Team.EnemyPlayer:
 				break;
 			default:
 				throw new NotImplementedException("Unit team is unrecognised");
@@ -67,6 +68,7 @@ public partial class Warrior : Unit
 				Game.EnemyBase.Damage(BASE_DAMAGE);
 				break;
 			case Team.Enemy:
+			case Team.EnemyPlayer:
 				Game.FriendlyBase.Damage(BASE_DAMAGE);
 				break;
 			default:
@@ -80,7 +82,6 @@ public partial class Warrior : Unit
 			return;
 		
 		if (target == null) {
-			GD.PrintErr("Cannot attack Null Target");
 			return;
 		}
 		LookAt(target.Position);

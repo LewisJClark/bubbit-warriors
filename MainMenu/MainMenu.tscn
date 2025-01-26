@@ -50,8 +50,7 @@ theme_override_constants/margin_right = 128
 
 [node name="SingleplayerButton" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
-text = "Singleplayer
-"
+text = "Singleplayer"
 
 [node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -60,8 +59,7 @@ theme_override_constants/margin_right = 128
 
 [node name="MultiplayerButton" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-text = "Local Multiplayer
-"
+text = "Local Multiplayer"
 
 [node name="MarginContainer3" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -70,5 +68,4 @@ theme_override_constants/margin_right = 128
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
-text = "Quit
-"
+text = "Quit"

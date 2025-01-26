@@ -10,7 +10,7 @@ public enum Team
 
 public partial class Base : Node3D
 {
-	public delegate void BaseDestroyedHandler(Base destroyed);
+	public delegate void BaseDestroyedHandler();
 	public BaseDestroyedHandler OnDestroyed;
 
 	public delegate void UnitSpawnedHandler(Unit unit);
@@ -48,6 +48,8 @@ public partial class Base : Node3D
 			Game.FriendlyBase = this;
 		}
 		else {
+			if (Team == Team.Enemy && Game.IsLocalMultiplayer) 
+				Team = Team.EnemyPlayer;
 			_friendlyModel.Visible = false;
 			Game.EnemyBase = this;
 		}
@@ -60,7 +62,13 @@ public partial class Base : Node3D
         base._Process(delta);
 		if (Team == Team.Friendly) {
 			float newZ = _spawnPoint.Position.Z;
-			newZ += Input.GetAxis("MoveSpawnerUp", "MoveSpawnerDown") * 3f * (float)delta;
+			newZ += Input.GetAxis("ui_up", "ui_down") * 3f * (float)delta;
+			newZ = Math.Clamp(newZ, -2.4f, 2.4f);
+			_spawnPoint.Position = new Vector3(_spawnPoint.Position.X, _spawnPoint.Position.Y, newZ);
+		}
+		else if (Team == Team.EnemyPlayer) {
+			float newZ = _spawnPoint.Position.Z;
+			newZ -= Input.GetAxis("ui_up_p2", "ui_down_p2") * 3f * (float)delta;
 			newZ = Math.Clamp(newZ, -2.4f, 2.4f);
 			_spawnPoint.Position = new Vector3(_spawnPoint.Position.X, _spawnPoint.Position.Y, newZ);
 		}
@@ -77,6 +85,9 @@ public partial class Base : Node3D
 		{
 			Health -= (int)damage - Currency;
 			Currency = 0;
+
+			if (Health <= 0) 
+				OnDestroyed?.Invoke();
 		}
 	}
 
