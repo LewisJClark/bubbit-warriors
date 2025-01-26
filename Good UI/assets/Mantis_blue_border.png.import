@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dti2gfhpivipp"
-path="res://.godot/imported/Kelp Large.png-49650ca25a4462dab33c0a8463fa53a3.ctex"
+uid="uid://clf3mvci5oigp"
+path="res://.godot/imported/Mantis_blue_border.png-a85f64ed6599d9d943996c6ebe10c808.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Kelp Large.png"
-dest_files=["res://.godot/imported/Kelp Large.png-49650ca25a4462dab33c0a8463fa53a3.ctex"]
+source_file="res://Good UI/assets/Mantis_blue_border.png"
+dest_files=["res://.godot/imported/Mantis_blue_border.png-a85f64ed6599d9d943996c6ebe10c808.ctex"]
 
 [params]
 

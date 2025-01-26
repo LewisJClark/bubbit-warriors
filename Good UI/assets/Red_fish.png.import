@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dti2gfhpivipp"
-path="res://.godot/imported/Kelp Large.png-49650ca25a4462dab33c0a8463fa53a3.ctex"
+uid="uid://csv4ecyhqshrc"
+path="res://.godot/imported/Red_fish.png-f2c6cbc3aa5b52e52a08f89ba3ccf0d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Kelp Large.png"
-dest_files=["res://.godot/imported/Kelp Large.png-49650ca25a4462dab33c0a8463fa53a3.ctex"]
+source_file="res://Good UI/assets/Red_fish.png"
+dest_files=["res://.godot/imported/Red_fish.png-f2c6cbc3aa5b52e52a08f89ba3ccf0d0.ctex"]
 
 [params]
 

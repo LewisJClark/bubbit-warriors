@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dti2gfhpivipp"
-path="res://.godot/imported/Kelp Large.png-49650ca25a4462dab33c0a8463fa53a3.ctex"
+uid="uid://cj8el5gjr67cw"
+path="res://.godot/imported/two-coins.svg-f205187c64dba9fe78cdb2bc64616e1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Kelp Large.png"
-dest_files=["res://.godot/imported/Kelp Large.png-49650ca25a4462dab33c0a8463fa53a3.ctex"]
+source_file="res://Good UI/two-coins.svg"
+dest_files=["res://.godot/imported/two-coins.svg-f205187c64dba9fe78cdb2bc64616e1f.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
