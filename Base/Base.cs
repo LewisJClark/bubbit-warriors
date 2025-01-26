@@ -17,14 +17,14 @@ public partial class Base : Node3D
 	public UnitSpawnedHandler OnUnitSpawned;
 
 	[Export] public Team Team = Team.Friendly;
-	[Export] public Ui UI;
+	[Export] public UI UI;
 	[Export] public int CurrencyPerSecond = 10;
 
 	// Unit scenes and costs.
 	[Export] public PackedScene[] UnitScenes;
 	[Export] public int[] UnitCosts;
 
-	public int Health { get; private set; } = 10;
+	public int Health { get; private set; } = 100;
 	public int Currency { get; private set; } = 100;
 
 	private Node3D _friendlyModel;
@@ -44,7 +44,7 @@ public partial class Base : Node3D
 
 		if (Team == Team.Friendly) {
 			_enemyModel.Visible = false;
-			UI.OnUnitButtonPressed += (int unitType) => SpawnUnit(unitType);
+			// UI.OnUnitButtonPressed += (int unitType) => SpawnUnit(unitType);
 			Game.FriendlyBase = this;
 		}
 		else {

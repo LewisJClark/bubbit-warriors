@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://MainMenu/MainMenu.cs" id="1_2uvww"]
 [ext_resource type="Texture2D" uid="uid://bccta7ktc225r" path="res://Resources/fish_icon.png" id="1_radf7"]
-[ext_resource type="PackedScene" uid="uid://w5xogjt6s30d" path="res://Main/Main.tscn" id="2_7qqa1"]
+[ext_resource type="PackedScene" uid="uid://w5xogjt6s30d" path="res://Main/Main.tscn" id="2_ojuwj"]
 [ext_resource type="PackedScene" uid="uid://upfo635imktf" path="res://audio/audio_manager.tscn" id="3_fnx3v"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("_singleplayerButton", "_multiplayerButton", "_quitButton", "_audioManager")]
@@ -16,7 +16,7 @@ script = ExtResource("1_2uvww")
 _singleplayerButton = NodePath("CenterContainer/VBoxContainer/MarginContainer/SingleplayerButton")
 _multiplayerButton = NodePath("CenterContainer/VBoxContainer/MarginContainer2/MultiplayerButton")
 _quitButton = NodePath("CenterContainer/VBoxContainer/MarginContainer3/QuitButton")
-_mainScene = ExtResource("2_7qqa1")
+_mainScene = ExtResource("2_ojuwj")
 _audioManager = NodePath("AudioManager")
 
 [node name="AudioManager" parent="." instance=ExtResource("3_fnx3v")]

@@ -27,6 +27,7 @@ public partial class Pufferfish : Unit
 			case Team.Friendly:
 				break;
 			case Team.Enemy:
+			case Team.EnemyPlayer:
 				break;
 			default:
 				throw new NotImplementedException("Unit team is unrecognised");
@@ -68,6 +69,7 @@ public partial class Pufferfish : Unit
 				Game.EnemyBase.Damage(BASE_DAMAGE);
 				break;
 			case Team.Enemy:
+			case Team.EnemyPlayer:
 				Game.FriendlyBase.Damage(BASE_DAMAGE);
 				break;
 			default:

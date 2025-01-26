@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nwdrefpewacm"
-path="res://.godot/imported/Red_puffer_updated.png-c815417628e22c0cedd989daff3eb53b.ctex"
+uid="uid://clf3mvci5oigp"
+path="res://.godot/imported/Mantis_blue_border.png-f526cbcb4bd972f4851ba85b084ce27b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Good UI/assets/Red_puffer_updated.png"
-dest_files=["res://.godot/imported/Red_puffer_updated.png-c815417628e22c0cedd989daff3eb53b.ctex"]
+source_file="res://GoodUI/assets/Mantis_blue_border.png"
+dest_files=["res://.godot/imported/Mantis_blue_border.png-f526cbcb4bd972f4851ba85b084ce27b.ctex"]
 
 [params]
 
