@@ -5,12 +5,11 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq;
 
-public partial class Warrior : Unit
+public partial class Pufferfish : Unit
 {	
-
-	private static uint MAX_HEALTH = 10;
+	private static uint MAX_HEALTH = 20;
 	private static uint BASE_DAMAGE = 2;
-	private static double BASE_ATTACK_COOLDOWN = 1.0;
+	private static double BASE_ATTACK_COOLDOWN = 3.0;
 	private static float BASE_ATTACK_DISTANCE = 1.0f;
 
 	private Timer _cooldownTimer;
@@ -19,7 +18,7 @@ public partial class Warrior : Unit
 
 	private bool _canAttack = true;
 
-	public Warrior() : base(MAX_HEALTH) {
+	public Pufferfish() : base(MAX_HEALTH) {
 		
 	}
 
@@ -90,6 +89,5 @@ public partial class Warrior : Unit
 		_canAttack = false;
 		_cooldownTimer.Start(BASE_ATTACK_COOLDOWN);
 	}
-
 
 }

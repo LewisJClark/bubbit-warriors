@@ -7,6 +7,8 @@ using System.Collections.Generic;
 
 public partial class Unit : CharacterBody3D
 {
+	[Export] protected PackedScene fish_blue;
+	[Export] protected PackedScene fish_red;
 	[Export] public Team Team = Team.Friendly;
 	[Export] public float AttackRange { get; protected set; } = 5;
 	[Export] public float MoveSpeed { get; protected set; } = 3;
@@ -34,11 +36,20 @@ public partial class Unit : CharacterBody3D
 	private Vector3 lastMoveView = new Vector3();
 	private TargetLine _targetLine;
 
+	// targeting
+	protected float _targetBaseX;
+	protected Vector3 _targetBasePosition;
+
+		// Target Detection
+	private Area3D _detectionArea;
+	private List<Unit> _localEnemyUnits;
+
 	public Unit(uint maxHealth) {
 		this.maxHealth = maxHealth;
 		this.health = maxHealth;
 
 		_collisionUnits = new List<Unit>();
+		_localEnemyUnits = new List<Unit>();
 	}
 
 	public override void _Ready()
@@ -53,6 +64,26 @@ public partial class Unit : CharacterBody3D
 		_targetLine = GetNode<TargetLine>("DebugTargetLine");
 
 		
+		_detectionArea = GetNode<Area3D>("DetectionArea");
+		_detectionArea.AreaEntered += _OnDetectionAreaEntered;
+		_detectionArea.AreaExited += _OnDetectionAreaExited;
+
+		switch (Team) {
+			case Team.Friendly:
+				_targetBaseX = Game.EnemyBase.Position.X;
+				_targetBasePosition = Game.EnemyBase.Position;
+				_unitModel = fish_blue.Instantiate<Node3D>();
+				AddChild(_unitModel);
+				break;
+			case Team.Enemy:
+				_targetBaseX = Game.FriendlyBase.Position.X;
+				_targetBasePosition = Game.FriendlyBase.Position;
+				_unitModel = fish_red.Instantiate<Node3D>();
+				AddChild(_unitModel);
+				break;
+			default:
+				throw new NotImplementedException("Unit team is unrecognised");
+		}
 	}
 
 	/** Damage this unit. If the health falls to 0 then the Unit will be queued for deletion.
@@ -122,6 +153,21 @@ public partial class Unit : CharacterBody3D
 		if (Position.Z < -GAME_BOUNDARY) Position = new Vector3(Position.X, Position.Y, -GAME_BOUNDARY);
 	}
 
+	protected Unit _FindUnitToAttack() {
+		_localEnemyUnits.RemoveAll((unit) => !IsInstanceValid(unit));
+		if (_localEnemyUnits.Count == 0) return null;
+		Unit target = _localEnemyUnits[0];
+		float distance = Position.DistanceTo(target.Position);
+		foreach (Unit unit in _localEnemyUnits) {
+			float newDistance = Position.DistanceTo(unit.Position);
+			if (newDistance < distance) {
+				distance = newDistance;
+				target = unit;
+			}
+		}
+		return target;
+	}
+
 	private void _OnCollisionAreaEnter(Area3D other) {
 		if (other.Owner is not Unit unit || unit.Team != Team)
 			return;
@@ -135,6 +181,24 @@ public partial class Unit : CharacterBody3D
 			return;
 		
 		_collisionUnits.Remove(unit);
+	}
+
+	private void _OnDetectionAreaEntered(Area3D other) 
+	{
+		// GD.Print("Unit entered");
+        if (other.Owner is not Unit unit || unit.Team == Team)
+            return;
+		
+		_localEnemyUnits.Add(unit);
+		// unit.TreeExiting += () => _localEnemyUnits.Remove(unit);
+		// GD.Print("Unit added");
+    }
+
+	private void _OnDetectionAreaExited(Area3D other)	{
+		if (other.Owner is not Unit unit)
+            return;
+		_localEnemyUnits.Remove(unit);
+		// GD.Print("Unit removed");
 	}
 
 }
