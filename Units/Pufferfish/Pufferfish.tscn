@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cg81uw7av2wy3"]
+[gd_scene load_steps=12 format=3 uid="uid://bustsfsvolwu"]
 
-[ext_resource type="Script" path="res://Units/Warrior/Warrior.cs" id="1_0xodw"]
 [ext_resource type="PackedScene" uid="uid://bo52a50yerob8" path="res://models/fish.gltf" id="1_ebibn"]
+[ext_resource type="Script" path="res://Units/Pufferfish/Pufferfish.cs" id="1_rwnhk"]
 [ext_resource type="PackedScene" uid="uid://d1nl3ythl8y6v" path="res://models/Scenes/fish_blue.tscn" id="2_5ui8t"]
 [ext_resource type="PackedScene" uid="uid://oaqneysl8csh" path="res://models/Scenes/fish_red.tscn" id="3_ks8vq"]
 [ext_resource type="Script" path="res://Units/Debug/TargetLine.cs" id="5_i415h"]
@@ -19,11 +19,15 @@ radius = 0.185316
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_al0l7"]
 height = 0.505915
-radius = 1.00266
+radius = 0.500868
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_3iufm"]
 
-[node name="Warrior" type="CharacterBody3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0pu2h"]
+height = 0.5
+radius = 0.75
+
+[node name="Pufferfish" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 2
 axis_lock_linear_y = true
@@ -31,7 +35,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 motion_mode = 1
-script = ExtResource("1_0xodw")
+script = ExtResource("1_rwnhk")
 fish_blue = ExtResource("2_5ui8t")
 fish_red = ExtResource("3_ks8vq")
 
@@ -42,7 +46,7 @@ visible = false
 [node name="Hitbox" type="Area3D" parent="Model"]
 transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 0, 0)
 collision_layer = 8
-collision_mask = 8
+collision_mask = 9
 
 [node name="Shape" type="CollisionShape3D" parent="Model/Hitbox"]
 shape = SubResource("SphereShape3D_j4b0v")
@@ -72,3 +76,11 @@ shape = SubResource("CylinderShape3D_al0l7")
 [node name="DebugTargetLine" type="MeshInstance3D" parent="."]
 mesh = SubResource("ImmediateMesh_3iufm")
 script = ExtResource("5_i415h")
+
+[node name="HitZone" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -1)
+shape = SubResource("CylinderShape3D_0pu2h")

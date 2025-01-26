@@ -66,18 +66,17 @@ public partial class Base : Node3D
 		}
     }
 
-    public void Attack(int damage)
+    public void Damage(uint damage)
 	{
 		if (Currency >= damage) 
 		{
-			Currency -= damage;
+			Currency -= (int)damage;
 			UI.SetCurrencyAmount(Team, Currency);
 		}
 		else 
 		{
-			damage -= Currency;
+			Health -= (int)damage - Currency;
 			Currency = 0;
-			Health -= damage;
 		}
 	}
 
@@ -93,6 +92,17 @@ public partial class Base : Node3D
 				OnUnitSpawned?.Invoke(warrior);
 				warrior.GlobalPosition = _spawnPoint.GlobalPosition;
 				break;
+			case 1:
+				if (Currency < UnitCosts[unitType])
+					return;
+				Currency -= UnitCosts[unitType];
+				var pufferfish = UnitScenes[unitType].Instantiate<Pufferfish>();
+				pufferfish.Team = Team;
+				OnUnitSpawned?.Invoke(pufferfish);
+				pufferfish.GlobalPosition = _spawnPoint.GlobalPosition;
+				break;
+			default:
+				throw new NotImplementedException("Spawn not implemented for unit");
 		}
 		UI.SetCurrencyAmount(Team, Currency);
 	}
