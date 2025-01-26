@@ -17,7 +17,9 @@ public partial class AudioManager : Node
 	[Export]
 	AudioStream confirmUiStream;
 	[Export]
-	private int soundEffectPlayerCount = 5;
+	int soundEffectPlayerCount = 5;
+	[Export]
+	String soundEffectBusName = "SFX";
 
 	private Queue<AudioStream> audioQueue = new Queue<AudioStream>();
 	private Queue<AudioStreamPlayer2D> availableAudioPlayers = new Queue<AudioStreamPlayer2D>();
@@ -28,6 +30,7 @@ public partial class AudioManager : Node
 		{
 			var audioPlayer = new AudioStreamPlayer2D();
 			audioPlayer.PanningStrength = 2;
+			audioPlayer.Bus =soundEffectBusName;
 			AddChild(audioPlayer);
 			audioPlayer.Finished += () => OnStreamFinished(audioPlayer);
 			availableAudioPlayers.Enqueue(audioPlayer);
