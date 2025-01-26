@@ -1,16 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm1vv07dkleyc"]
+[gd_scene load_steps=8 format=3 uid="uid://cm1vv07dkleyc"]
 
 [ext_resource type="Script" path="res://Base/Base.cs" id="1_67uot"]
-[ext_resource type="PackedScene" uid="uid://cg81uw7av2wy3" path="res://Units/Warrior/Warrior.tscn" id="2_i8561"]
 [ext_resource type="PackedScene" uid="uid://ikl81da8dfhv" path="res://models/base.gltf" id="2_j22jt"]
 [ext_resource type="PackedScene" uid="uid://bustsfsvolwu" path="res://Units/Pufferfish/Pufferfish.tscn" id="3_d86dd"]
-[ext_resource type="PackedScene" uid="uid://dfkw52x3df6sp" path="res://components/base_red.tscn" id="4_oobyy"]
+[ext_resource type="PackedScene" path="res://components/base_red.tscn" id="4_oobyy"]
+[ext_resource type="PackedScene" uid="uid://cjm802dt73u8i" path="res://Units/Mantis Shrimp/MantisShrimp.tscn" id="4_xk6jq"]
+[ext_resource type="PackedScene" uid="uid://cg81uw7av2wy3" path="res://Units/Warrior/Warrior.tscn" id="4_yro4w"]
 [ext_resource type="Texture2D" uid="uid://c3gclkn26m2bq" path="res://Resources/Blue.png" id="5_833cb"]
 
 [node name="Base" type="Node3D"]
 script = ExtResource("1_67uot")
-UnitScenes = Array[PackedScene]([ExtResource("2_i8561"), ExtResource("3_d86dd")])
-UnitCosts = PackedInt32Array(5, 10)
+UnitScenes = Array[PackedScene]([ExtResource("4_yro4w"), ExtResource("3_d86dd"), ExtResource("4_xk6jq")])
+UnitCosts = PackedInt32Array(5, 10, 20)
 
 [node name="FriendlyModel" parent="." instance=ExtResource("2_j22jt")]
 

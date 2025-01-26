@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbcyf5k4enj43"]
+
+[ext_resource type="PackedScene" uid="uid://d4nutulki4gb5" path="res://models/mantisShrimp.gltf" id="1_lc2k6"]
+
+[node name="mantisShrimp2" instance=ExtResource("1_lc2k6")]
+transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 0, 0, 0)

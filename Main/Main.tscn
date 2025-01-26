@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://Main/Camera.cs" id="4_puxik"]
 [ext_resource type="Texture2D" uid="uid://crrqk8ibofiw5" path="res://Resources/Bottom 2.png" id="5_pu2bk"]
 [ext_resource type="PackedScene" uid="uid://bshaq34gdj38m" path="res://EnemyPlayerController/EnemyPlayerController.tscn" id="7_pxa2x"]
-[ext_resource type="Environment" uid="uid://2e7hla7qigi8" path="res://Main/Fog.tres" id="10_ckkqp"]
+[ext_resource type="Environment" path="res://Main/Fog.tres" id="10_ckkqp"]
 [ext_resource type="Script" path="res://Main/MpCamera.cs" id="11_47qsc"]
 [ext_resource type="PackedScene" uid="uid://upfo635imktf" path="res://audio/audio_manager.tscn" id="12_4rmas"]
 [ext_resource type="PackedScene" uid="uid://dkqd7rhqd0xhk" path="res://GoodUI/main.tscn" id="15_q24yn"]

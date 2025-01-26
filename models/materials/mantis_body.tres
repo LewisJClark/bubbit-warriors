@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://ci3ov5ewtwxlk"]
+
+[ext_resource type="Texture2D" uid="uid://3owcxrhelmnp" path="res://models/mantis_mantis_body_BaseColor.png" id="1_h0n18"]
+[ext_resource type="Texture2D" uid="uid://btsv6yhc3eay0" path="res://models/mantis_mantis_body_Roughness.png" id="2_d01ea"]
+[ext_resource type="Texture2D" uid="uid://bkajiwbyk36ko" path="res://models/mantis_mantis_body_Normal.png" id="3_ev5ih"]
+
+[resource]
+resource_name = "mantis_body"
+cull_mode = 2
+albedo_texture = ExtResource("1_h0n18")
+metallic_texture = ExtResource("2_d01ea")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_d01ea")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_ev5ih")

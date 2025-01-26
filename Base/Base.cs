@@ -112,6 +112,15 @@ public partial class Base : Node3D
 				OnUnitSpawned?.Invoke(pufferfish);
 				pufferfish.GlobalPosition = _spawnPoint.GlobalPosition;
 				break;
+			case 2:
+				if (Currency < UnitCosts[unitType])
+					return;
+				Currency -= UnitCosts[unitType];
+				var mantisShrimp = UnitScenes[unitType].Instantiate<MantisShrimp>();
+				mantisShrimp.Team = Team;
+				OnUnitSpawned?.Invoke(mantisShrimp);
+				mantisShrimp.GlobalPosition = _spawnPoint.GlobalPosition;
+				break;
 			default:
 				throw new NotImplementedException("Spawn not implemented for unit");
 		}

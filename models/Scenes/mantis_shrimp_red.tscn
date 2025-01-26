@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://pxwbm3fedhsx"]
+
+[ext_resource type="PackedScene" uid="uid://d4nutulki4gb5" path="res://models/mantisShrimp.gltf" id="1_a4owk"]
+[ext_resource type="Material" uid="uid://b4mo5qgempig7" path="res://models/materials/mantis_body_red.tres" id="2_i0cs2"]
+
+[node name="mantisShrimp2" instance=ExtResource("1_a4owk")]
+transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 0, 0, 0)
+
+[node name="mantisShrimp" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_i0cs2")
