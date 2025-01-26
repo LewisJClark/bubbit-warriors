@@ -1,0 +1,590 @@
+[gd_scene load_steps=40 format=3 uid="uid://dkqd7rhqd0xhk"]
+
+[ext_resource type="Script" path="res://Good UI/main.gd" id="1_kpu2t"]
+[ext_resource type="Texture2D" uid="uid://cmharftwvj1js" path="res://Good UI/assets/Blue_Fish.png" id="2_fohd6"]
+[ext_resource type="Texture2D" uid="uid://clf3mvci5oigp" path="res://Good UI/assets/Mantis_blue_border.png" id="3_43nht"]
+[ext_resource type="Texture2D" uid="uid://bq68x8yt2u3xq" path="res://Good UI/assets/Blue_puffer.png" id="4_5fjcg"]
+[ext_resource type="Texture2D" uid="uid://csv4ecyhqshrc" path="res://Good UI/assets/Red_fish.png" id="4_nolwd"]
+[ext_resource type="Texture2D" uid="uid://nwdrefpewacm" path="res://Good UI/assets/Red_puffer_updated.png" id="5_bbc50"]
+[ext_resource type="Texture2D" uid="uid://d3lg7jla3805l" path="res://Good UI/assets/Mantis_red_border.png" id="5_fiquw"]
+[ext_resource type="Texture2D" uid="uid://cj8el5gjr67cw" path="res://Good UI/two-coins.svg" id="8_jm3ga"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k2xk"]
+bg_color = Color(0.634701, 0.801013, 0.876317, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_baikk"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.326076, 0.941117, 0.435719, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0hm8"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.992157, 0.333333, 0.462745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e74qp"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.992157, 0.333333, 0.462745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mv7o"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_color = Color(0.992157, 0.333333, 0.462745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e4vc"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.635294, 0.8, 0.87451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gujde"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.326076, 0.941117, 0.435719, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2x6i0"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.992157, 0.333333, 0.462745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4oys"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.992157, 0.333333, 0.462745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68x5v"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.635294, 0.8, 0.87451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rowau"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.326076, 0.941117, 0.435719, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dv0eu"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.992157, 0.333333, 0.462745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6ske"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.992157, 0.333333, 0.462745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxmro"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlun4"]
+bg_color = Color(0.922518, 0.419594, 0.416777, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p38ep"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.326076, 0.941117, 0.435719, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4qfe"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.992157, 0.333333, 0.462745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4u4b3"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.992157, 0.333333, 0.462745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cd21f"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.992157, 0.333333, 0.462745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbxpd"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7ejb"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.326076, 0.941117, 0.435719, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ea8wc"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.819608, 0.0588235, 0.309804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tiucs"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.819608, 0.0588235, 0.309804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2q1qg"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hsii"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.326076, 0.941117, 0.435719, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t3vp"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.819608, 0.0588235, 0.309804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbtwp"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ha1ey"]
+bg_color = Color(0.808998, 0.808998, 0.808998, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62x0g"]
+bg_color = Color(0.768627, 0.172549, 0.14902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwygi"]
+bg_color = Color(0.870588, 0.713726, 0.27451, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.982343, 0.982342, 0.982342, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ics4d"]
+bg_color = Color(0.271192, 0.80089, 0.975128, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.982343, 0.982342, 0.982342, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kpu2t")
+
+[node name="Bottom" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Characters" type="Panel" parent="Bottom"]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 93.0
+offset_right = 369.0
+offset_bottom = 198.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8k2xk")
+
+[node name="ButtonONE" type="Button" parent="Bottom/Characters"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -51.5
+offset_right = 117.0
+offset_bottom = 51.5
+grow_vertical = 2
+focus_neighbor_left = NodePath("../ButtonThree")
+focus_neighbor_top = NodePath("../../Enemy/ButtonFOUR")
+focus_neighbor_right = NodePath("../ButtonTWO")
+focus_neighbor_bottom = NodePath("../../Enemy/ButtonFOUR")
+theme_override_styles/focus = SubResource("StyleBoxFlat_baikk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_l0hm8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e74qp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6mv7o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0e4vc")
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Characters/ButtonONE"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -43.5
+offset_right = 49.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fohd6")
+
+[node name="ButtonTWO" type="Button" parent="Bottom/Characters"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -51.5
+offset_right = 59.5
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../ButtonONE")
+focus_neighbor_top = NodePath("../../Enemy/ButtonFOUR")
+focus_neighbor_right = NodePath("../ButtonThree")
+focus_neighbor_bottom = NodePath("../../Enemy/ButtonFOUR")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gujde")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2x6i0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x4oys")
+theme_override_styles/normal = SubResource("StyleBoxFlat_68x5v")
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Characters/ButtonTWO"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -43.5
+offset_right = 49.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_43nht")
+
+[node name="ButtonThree" type="Button" parent="Bottom/Characters"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -52.0
+offset_bottom = 52.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_neighbor_left = NodePath("../ButtonTWO")
+focus_neighbor_top = NodePath("../../Enemy/ButtonFOUR")
+focus_neighbor_right = NodePath("../ButtonONE")
+focus_neighbor_bottom = NodePath("../../Enemy/ButtonFOUR")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rowau")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dv0eu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o6ske")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pxmro")
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Characters/ButtonThree"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -43.5
+offset_right = 49.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5fjcg")
+
+[node name="Enemy" type="Panel" parent="Bottom"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -358.0
+offset_top = 75.0
+offset_bottom = 198.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qlun4")
+
+[node name="ButtonFOUR" type="Button" parent="Bottom/Enemy"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -52.0
+offset_right = 117.0
+offset_bottom = 52.0
+grow_vertical = 2
+focus_neighbor_left = NodePath("../ButtonSIX")
+focus_neighbor_top = NodePath("../../Characters/ButtonONE")
+focus_neighbor_right = NodePath("../ButtonFIVE")
+focus_neighbor_bottom = NodePath("../../Characters/ButtonONE")
+theme_override_styles/focus = SubResource("StyleBoxFlat_p38ep")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_y4qfe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4u4b3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cd21f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kbxpd")
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Enemy/ButtonFOUR"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -43.0
+offset_right = 48.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_bbc50")
+
+[node name="ButtonFIVE" type="Button" parent="Bottom/Enemy"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -52.0
+offset_right = 59.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../ButtonFOUR")
+focus_neighbor_top = NodePath("../../Characters/ButtonONE")
+focus_neighbor_right = NodePath("../ButtonSIX")
+focus_neighbor_bottom = NodePath("../../Characters/ButtonONE")
+theme_override_styles/focus = SubResource("StyleBoxFlat_r7ejb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ea8wc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tiucs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2q1qg")
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Enemy/ButtonFIVE"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -43.5
+offset_right = 49.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_nolwd")
+
+[node name="ButtonSIX" type="Button" parent="Bottom/Enemy"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -52.0
+offset_bottom = 52.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_neighbor_left = NodePath("../ButtonFIVE")
+focus_neighbor_top = NodePath("../../Characters/ButtonONE")
+focus_neighbor_right = NodePath("../ButtonFOUR")
+focus_neighbor_bottom = NodePath("../../Characters/ButtonONE")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2hsii")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6t3vp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cbtwp")
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Enemy/ButtonSIX"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -43.0
+offset_right = 49.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_fiquw")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -365.5
+offset_top = 37.0
+offset_right = 365.5
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ha1ey")
+theme_override_styles/fill = SubResource("StyleBoxFlat_62x0g")
+value = 20.0
+show_percentage = false
+
+[node name="Coins" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 190.0
+offset_bottom = 62.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xwygi")
+
+[node name="TextureRect" type="TextureRect" parent="Coins"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -21.0
+offset_right = -39.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_jm3ga")
+expand_mode = 1
+
+[node name="CoinNumber" type="Label" parent="Coins"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -18.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "18,000"
+
+[node name="CoinsEnemy" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -190.0
+offset_bottom = 62.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ics4d")
+
+[node name="TextureRect" type="TextureRect" parent="CoinsEnemy"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -21.0
+offset_right = -39.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_jm3ga")
+expand_mode = 1
+
+[node name="CoinNumberEnemy" type="Label" parent="CoinsEnemy"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -18.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "18,000"
+
+[connection signal="pressed" from="Bottom/Characters/ButtonONE" to="." method="_on_button_one_pressed"]
+[connection signal="pressed" from="Bottom/Characters/ButtonONE" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Bottom/Characters/ButtonTWO" to="." method="_on_button_two_pressed"]
+[connection signal="pressed" from="Bottom/Characters/ButtonTWO" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Bottom/Characters/ButtonThree" to="." method="_on_button_four_pressed"]
+[connection signal="pressed" from="Bottom/Characters/ButtonThree" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Bottom/Enemy/ButtonFOUR" to="." method="_on_button_three_pressed"]
+[connection signal="pressed" from="Bottom/Enemy/ButtonFOUR" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Bottom/Enemy/ButtonFIVE" to="." method="_on_button_five_pressed"]
+[connection signal="pressed" from="Bottom/Enemy/ButtonFIVE" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Bottom/Enemy/ButtonSIX" to="." method="_on_button_six_pressed"]
+[connection signal="pressed" from="Bottom/Enemy/ButtonSIX" to="." method="_on_button_4_pressed"]
